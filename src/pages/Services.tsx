@@ -25,7 +25,7 @@ const Services = () => {
         "Budget & Resource Plan"
       ],
       duration: "4-8 weeks",
-      investment: "From $15,000",
+      investment: "From ₹12,50,000",
       color: "from-blue-500 to-purple-500"
     },
     {
@@ -48,7 +48,7 @@ const Services = () => {
         "Training & Documentation"
       ],
       duration: "6-12 weeks",
-      investment: "From $25,000",
+      investment: "From ₹21,00,000",
       color: "from-green-500 to-blue-500"
     },
     {
@@ -71,7 +71,7 @@ const Services = () => {
         "Maintenance Plan"
       ],
       duration: "8-16 weeks",
-      investment: "From $35,000",
+      investment: "From ₹29,50,000",
       color: "from-purple-500 to-pink-500"
     }
   ];
@@ -105,16 +105,16 @@ const Services = () => {
 
   const testimonials = [
     {
-      quote: "PixelMind Labs transformed our data operations. Their AI consulting helped us identify $2M in annual savings opportunities.",
-      author: "Sarah Chen",
-      title: "CTO, TechCorp",
-      company: "Fortune 500 Technology Company"
+      quote: "PixelMind Labs transformed our data operations. Their AI consulting helped us identify ₹16.8 crores in annual savings opportunities.",
+      author: "Rajesh Sharma",
+      title: "CTO, TechVision India",
+      company: "Leading Indian Technology Company"
     },
     {
       quote: "The custom analytics platform they built gives us insights we never had before. Our decision-making has never been better.",
-      author: "Michael Rodriguez",
-      title: "VP of Operations",
-      company: "Healthcare Innovation Group"
+      author: "Priya Nair",
+      title: "VP of Operations", 
+      company: "Mumbai Healthcare Innovation Hub"
     }
   ];
 
@@ -143,64 +143,67 @@ const Services = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="overflow-hidden hover-lift glow-brand">
+                <Card key={index} className="overflow-hidden hover-lift card-professional">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    <div className={`bg-gradient-to-br ${service.color} p-8 lg:p-12 text-white`}>
-                      <div className="flex items-center mb-6">
-                        <div className="p-3 bg-white/20 rounded-full mr-4">
-                          <Icon className="h-8 w-8" />
+                    <div className={`bg-gradient-to-br ${service.color} p-8 lg:p-12 text-white relative`}>
+                      <div className="absolute inset-0 neural-bg opacity-20"></div>
+                      <div className="relative z-10">
+                        <div className="flex items-center mb-8">
+                          <div className="p-4 bg-white/20 rounded-2xl mr-4 glass-card">
+                            <Icon className="h-10 w-10" />
+                          </div>
+                          <div>
+                            <h2 className="text-4xl font-display font-bold text-display">{service.title}</h2>
+                            <p className="text-white/90 text-lg mt-1">{service.subtitle}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h2 className="text-3xl font-display font-bold">{service.title}</h2>
-                          <p className="text-white/80">{service.subtitle}</p>
-                        </div>
-                      </div>
-                      
-                      <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                        {service.description}
-                      </p>
+                        
+                        <p className="text-lg text-white/95 mb-10 leading-relaxed text-body-premium">
+                          {service.description}
+                        </p>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="font-semibold mb-3 text-white/90">Duration</h4>
-                          <p className="text-2xl font-display font-bold">{service.duration}</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+                          <div className="glass-card p-4 rounded-xl">
+                            <h4 className="font-semibold mb-2 text-white/90 text-sm uppercase tracking-wider">Duration</h4>
+                            <p className="text-3xl font-display font-bold pricing-display text-white">{service.duration}</p>
+                          </div>
+                          <div className="glass-card p-4 rounded-xl">
+                            <h4 className="font-semibold mb-2 text-white/90 text-sm uppercase tracking-wider">Investment</h4>
+                            <p className="text-3xl font-display font-bold pricing-display text-white">{service.investment}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-semibold mb-3 text-white/90">Investment</h4>
-                          <p className="text-2xl font-display font-bold">{service.investment}</p>
-                        </div>
-                      </div>
 
-                      <Button size="lg" variant="secondary" className="mt-8 hover-lift">
-                        Get Quote
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
+                        <Button size="lg" variant="secondary" className="btn-premium hover-lift text-lg px-8 py-4">
+                          Get Premium Quote
+                          <ArrowRight className="ml-2 h-6 w-6" />
+                        </Button>
+                      </div>
                     </div>
 
-                    <div className="p-8 lg:p-12 bg-card">
-                      <div className="mb-8">
-                        <h3 className="text-xl font-display font-semibold mb-4">
-                          What's Included
+                    <div className="p-8 lg:p-12 bg-card glass-card">
+                      <div className="mb-10">
+                        <h3 className="text-2xl font-display font-bold mb-6 text-gradient-brand">
+                          Premium Features Included
                         </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           {service.features.map((feature, fIndex) => (
-                            <div key={fIndex} className="flex items-center gap-2">
-                              <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                              <span className="text-sm text-muted-foreground">{feature}</span>
+                            <div key={fIndex} className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+                              <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                              <span className="text-sm font-medium text-foreground">{feature}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      <div>
-                        <h3 className="text-xl font-display font-semibold mb-4">
-                          Deliverables
+                      <div className="glass-card p-6 rounded-xl">
+                        <h3 className="text-2xl font-display font-bold mb-6 text-gradient-brand">
+                          Project Deliverables
                         </h3>
-                        <ul className="space-y-2">
+                        <ul className="space-y-4">
                           {service.deliverables.map((deliverable, dIndex) => (
-                            <li key={dIndex} className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-gradient-brand rounded-full flex-shrink-0" />
-                              <span className="text-muted-foreground">{deliverable}</span>
+                            <li key={dIndex} className="flex items-start gap-3">
+                              <div className="w-3 h-3 bg-gradient-brand rounded-full flex-shrink-0 mt-2" />
+                              <span className="text-muted-foreground font-medium">{deliverable}</span>
                             </li>
                           ))}
                         </ul>
@@ -231,24 +234,24 @@ const Services = () => {
             {process.map((step, index) => {
               const Icon = step.icon;
               return (
-                <Card key={index} className="hover-lift text-center relative">
-                  <CardContent className="p-6">
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="w-8 h-8 bg-gradient-brand rounded-full flex items-center justify-center text-white font-bold">
+                <Card key={index} className="hover-lift card-professional animate-professional-float" style={{animationDelay: `${index * 0.2}s`}}>
+                  <CardContent className="p-8">
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                      <div className="w-12 h-12 bg-gradient-brand rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
                         {step.step}
                       </div>
                     </div>
                     
-                    <div className="pt-4">
-                      <div className="p-3 bg-gradient-brand rounded-full w-fit mx-auto mb-4">
-                        <Icon className="h-6 w-6 text-white" />
+                    <div className="pt-8">
+                      <div className="p-4 bg-gradient-brand rounded-2xl w-fit mx-auto mb-6 glass-card">
+                        <Icon className="h-8 w-8 text-white" />
                       </div>
                       
-                      <h3 className="text-xl font-display font-semibold mb-3">
+                      <h3 className="text-2xl font-display font-bold mb-4 text-gradient-brand">
                         {step.title}
                       </h3>
                       
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground text-body-premium leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -271,22 +274,22 @@ const Services = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover-lift glow-neural">
-                <CardContent className="p-8">
-                  <div className="mb-6">
-                    <div className="text-4xl text-gradient-brand mb-4">"</div>
-                    <p className="text-lg text-muted-foreground italic leading-relaxed">
+              <Card key={index} className="hover-lift card-professional glass-card">
+                <CardContent className="p-10">
+                  <div className="mb-8">
+                    <div className="text-6xl text-gradient-brand mb-6 font-display">"</div>
+                    <p className="text-xl text-muted-foreground italic leading-relaxed text-body-premium">
                       {testimonial.quote}
                     </p>
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-brand rounded-full flex items-center justify-center">
-                      <Users className="h-6 w-6 text-white" />
+                  <div className="flex items-center gap-6">
+                    <div className="w-16 h-16 bg-gradient-brand rounded-2xl flex items-center justify-center shadow-lg">
+                      <Users className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.title}</div>
+                      <div className="font-display font-bold text-lg text-gradient-brand">{testimonial.author}</div>
+                      <div className="text-sm text-muted-foreground font-medium">{testimonial.title}</div>
                       <div className="text-xs text-muted-foreground">{testimonial.company}</div>
                     </div>
                   </div>
@@ -308,13 +311,13 @@ const Services = () => {
             Let's discuss your project and explore how PixelMind Labs can help 
             transform your business with intelligent solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 hover-lift">
-              Schedule Consultation
-              <ArrowRight className="ml-2 h-5 w-5" />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" variant="secondary" className="btn-premium text-lg px-10 py-6 hover-lift">
+              Schedule Premium Consultation
+              <ArrowRight className="ml-2 h-6 w-6" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white/20 text-white hover:bg-white/10">
-              View Portfolio
+            <Button size="lg" variant="outline" className="text-lg px-10 py-6 border-white/20 text-white hover:bg-white/10 glass-card">
+              View Success Stories
             </Button>
           </div>
         </div>
