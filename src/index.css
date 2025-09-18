@@ -2,70 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* PixelMind Labs Design System - Futuristic AI Theme */
+/* iPhone-Style Design System - Premium AI Products */
 
 @layer base {
   :root {
-    /* Advanced AI Company Brand Colors */
+    /* iPhone-inspired Clean Colors */
     --background: 0 0% 100%;
-    --foreground: 210 40% 8%;
+    --foreground: 0 0% 3%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 8%;
+    --card-foreground: 0 0% 3%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 8%;
+    --popover-foreground: 0 0% 3%;
 
-    /* Primary: Deep Neural Blue */
-    --primary: 220 91% 15%;
+    /* Primary: Premium Space Gray */
+    --primary: 220 9% 46%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary: AI Purple */
-    --secondary: 260 84% 25%;
+    /* Secondary: Apple Blue */
+    --secondary: 215 100% 51%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Accent: Electric Cyan */
-    --accent: 190 95% 39%;
+    /* Accent: Vibrant Orange */
+    --accent: 28 100% 52%;
     --accent-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 91% 15%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 215 100% 51%;
 
-    /* Advanced PixelMind AI Brand System */
-    --brand-neural: 220 91% 15%;
-    --brand-intelligence: 260 84% 25%;
-    --brand-quantum: 190 95% 39%;
-    --brand-plasma: 280 100% 45%;
-    --brand-cyber: 170 100% 41%;
+    /* iPhone-style Premium Colors */
+    --iphone-gray: 220 9% 46%;
+    --iphone-blue: 215 100% 51%;
+    --iphone-black: 0 0% 3%;
+    --iphone-silver: 0 0% 86%;
+    --iphone-gold: 45 100% 51%;
+    --iphone-orange: 28 100% 52%;
     
-    /* Professional AI Gradients */
-    --brand-gradient-primary: linear-gradient(135deg, hsl(220 91% 15%) 0%, hsl(260 84% 25%) 100%);
-    --brand-gradient-secondary: linear-gradient(135deg, hsl(190 95% 39%) 0%, hsl(220 91% 15%) 100%);
-    --brand-gradient-hero: linear-gradient(135deg, hsl(220 91% 15%) 0%, hsl(260 84% 25%) 30%, hsl(190 95% 39%) 70%, hsl(280 100% 45%) 100%);
-    --brand-gradient-neural: linear-gradient(135deg, hsl(260 84% 25%) 0%, hsl(280 100% 45%) 100%);
-    --brand-gradient-quantum: linear-gradient(135deg, hsl(190 95% 39%) 0%, hsl(170 100% 41%) 100%);
+    /* Premium Product Gradients */
+    --gradient-titanium: linear-gradient(135deg, hsl(220 9% 46%) 0%, hsl(220 14% 56%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(215 100% 51%) 0%, hsl(215 100% 41%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(220 9% 46%) 0%, hsl(215 100% 51%) 50%, hsl(28 100% 52%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3%) 0%, hsl(220 9% 46%) 100%);
+    --gradient-product: linear-gradient(180deg, transparent 0%, hsl(0 0% 100%) 100%);
     
-    /* Neural Network Pattern */
-    --neural-glow: 0 0 40px hsl(240 100% 27% / 0.3);
-    --pixel-glow: 0 0 20px hsl(270 100% 35% / 0.4);
+    /* iPhone-style Shadows */
+    --shadow-soft: 0 2px 20px -2px hsl(0 0% 0% / 0.08);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.12);
+    --shadow-large: 0 20px 60px -12px hsl(0 0% 0% / 0.25);
+    --shadow-product: 0 25px 50px -12px hsl(0 0% 0% / 0.4);
     
-    /* Advanced Shadows */
-    --shadow-brand: 0 10px 40px -10px hsl(240 100% 27% / 0.2);
-    --shadow-glow: 0 0 30px hsl(270 100% 35% / 0.3);
-    --shadow-neural: 0 5px 25px -5px hsl(195 100% 50% / 0.25);
+    /* Premium Animation Variables */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+    --transition-premium: all 0.4s var(--ease-out-expo);
 
-    /* Animation Variables */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 0.5rem;
+    --radius: 1.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -85,48 +84,46 @@
   }
 
   .dark {
-    /* Dark Theme - Advanced Neural Network */
-    --background: 220 27% 2%;
-    --foreground: 220 14% 96%;
+    /* Dark Theme - iPhone Space Gray */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 96%;
 
-    --card: 220 27% 4%;
-    --card-foreground: 220 14% 96%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 220 27% 4%;
-    --popover-foreground: 220 14% 96%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 220 91% 65%;
-    --primary-foreground: 220 27% 2%;
+    --primary: 220 9% 56%;
+    --primary-foreground: 0 0% 96%;
 
-    --secondary: 260 84% 55%;
+    --secondary: 215 100% 61%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 190 95% 55%;
-    --accent-foreground: 220 27% 2%;
+    --accent: 28 100% 62%;
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 220 27% 8%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 63%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 27% 12%;
-    --input: 220 27% 12%;
-    --ring: 220 91% 65%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 215 100% 61%;
 
-    /* Dark Theme Advanced AI Brand */
-    --brand-gradient-primary: linear-gradient(135deg, hsl(220 91% 65%) 0%, hsl(260 84% 55%) 100%);
-    --brand-gradient-secondary: linear-gradient(135deg, hsl(190 95% 55%) 0%, hsl(220 91% 65%) 100%);
-    --brand-gradient-hero: linear-gradient(135deg, hsl(220 91% 65%) 0%, hsl(260 84% 55%) 30%, hsl(190 95% 55%) 70%, hsl(280 100% 65%) 100%);
-    --brand-gradient-neural: linear-gradient(135deg, hsl(260 84% 55%) 0%, hsl(280 100% 65%) 100%);
-    --brand-gradient-quantum: linear-gradient(135deg, hsl(190 95% 55%) 0%, hsl(170 100% 61%) 100%);
+    /* Dark Theme Premium Gradients */
+    --gradient-titanium: linear-gradient(135deg, hsl(220 9% 56%) 0%, hsl(220 14% 66%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(215 100% 61%) 0%, hsl(215 100% 51%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(220 9% 56%) 0%, hsl(215 100% 61%) 50%, hsl(28 100% 62%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(220 9% 56%) 100%);
+    --gradient-product: linear-gradient(180deg, transparent 0%, hsl(0 0% 7%) 100%);
     
-    --neural-glow: 0 0 50px hsl(220 100% 60% / 0.4);
-    --pixel-glow: 0 0 30px hsl(270 100% 45% / 0.5);
-    
-    --shadow-brand: 0 15px 50px -10px hsl(220 100% 60% / 0.3);
-    --shadow-glow: 0 0 40px hsl(270 100% 45% / 0.4);
-    --shadow-neural: 0 8px 35px -5px hsl(195 100% 60% / 0.35);
+    --shadow-soft: 0 2px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
+    --shadow-large: 0 20px 60px -12px hsl(0 0% 0% / 0.6);
+    --shadow-product: 0 25px 50px -12px hsl(0 0% 0% / 0.8);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -148,219 +145,242 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Neural Network Background Pattern */
-  .neural-bg {
-    background-image: 
-      radial-gradient(circle at 25% 25%, hsl(240 100% 27% / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(270 100% 35% / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsl(195 100% 50% / 0.05) 0%, transparent 50%);
+  /* iPhone-style Background Effects */
+  .mesh-gradient {
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(215 100% 51% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(28 100% 52% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(220 9% 46% / 0.1) 0%, transparent 50%);
   }
 
-  /* Pixel Grid Effect */
-  .pixel-grid {
-    background-image: 
-      linear-gradient(90deg, hsl(240 100% 27% / 0.03) 1px, transparent 1px),
-      linear-gradient(hsl(240 100% 27% / 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
+  .product-gradient {
+    background: var(--gradient-product);
   }
 
-  /* Glowing Elements */
-  .glow-brand {
-    box-shadow: var(--shadow-brand);
+  /* Premium Shadow Effects */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
   }
 
-  .glow-neural {
-    box-shadow: var(--neural-glow);
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
   }
 
-  .glow-pixel {
-    box-shadow: var(--pixel-glow);
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+
+  .shadow-product {
+    box-shadow: var(--shadow-product);
   }
 }
 
 @layer components {
-  /* Brand Gradients */
-  .gradient-brand {
-    background: var(--brand-gradient-primary);
+  /* iPhone-style Gradients */
+  .gradient-titanium {
+    background: var(--gradient-titanium);
+  }
+
+  .gradient-blue {
+    background: var(--gradient-blue);
+  }
+
+  .gradient-premium {
+    background: var(--gradient-premium);
   }
 
   .gradient-hero {
-    background: var(--brand-gradient-hero);
-  }
-
-  .gradient-secondary {
-    background: var(--brand-gradient-secondary);
+    background: var(--gradient-hero);
   }
 
   /* Text Gradients */
-  .text-gradient-brand {
-    background: var(--brand-gradient-primary);
+  .text-gradient-titanium {
+    background: var(--gradient-titanium);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-gradient-hero {
-    background: var(--brand-gradient-hero);
+  .text-gradient-blue {
+    background: var(--gradient-blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Animated Elements */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .text-gradient-premium {
+    background: var(--gradient-premium);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite alternate;
+  /* iPhone-style Animations */
+  .animate-float-soft {
+    animation: float-soft 8s ease-in-out infinite;
   }
 
-  .animate-neural {
-    animation: neural-pulse 3s ease-in-out infinite;
+  .animate-scale-in {
+    animation: scale-in 0.6s var(--ease-out-expo);
   }
 
-  /* Hover Effects */
-  .hover-lift {
-    transition: var(--transition-smooth);
+  .animate-slide-up {
+    animation: slide-up 0.8s var(--ease-out-expo);
   }
 
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-glow);
+  /* Premium Hover Effects */
+  .hover-scale {
+    transition: var(--transition-premium);
   }
 
-  .hover-glow {
-    transition: var(--transition-smooth);
+  .hover-scale:hover {
+    transform: scale(1.02);
   }
 
-  .hover-glow:hover {
-    box-shadow: var(--neural-glow);
+  .hover-lift-soft {
+    transition: var(--transition-premium);
+  }
+
+  .hover-lift-soft:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-large);
+  }
+
+  .hover-glow-soft {
+    transition: var(--transition-premium);
+  }
+
+  .hover-glow-soft:hover {
+    box-shadow: var(--shadow-product);
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(0.5deg); }
+  66% { transform: translateY(-4px) rotate(-0.5deg); }
 }
 
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 20px hsl(240 100% 27% / 0.3); }
-  100% { box-shadow: 0 0 40px hsl(270 100% 35% / 0.6); }
-}
-
-  /* Enhanced Professional Brand Gradients */
-  .bg-gradient-brand {
-    background: var(--brand-gradient-primary);
+@keyframes scale-in {
+  0% { 
+    opacity: 0;
+    transform: scale(0.9);
   }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-  /* Professional Glass Morphism */
-  .glass-card {
-    background: rgba(255, 255, 255, 0.95);
+@keyframes slide-up {
+  0% { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  /* iPhone-style Glass Morphism */
+  .glass-premium {
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-soft);
   }
 
-  .dark .glass-card {
-    background: rgba(34, 34, 50, 0.95);
+  .dark .glass-premium {
+    background: rgba(18, 18, 18, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Premium Button Styles */
-  .btn-premium {
-    background: var(--brand-gradient-primary);
+  /* iPhone-style Buttons */
+  .btn-iphone {
+    background: var(--gradient-blue);
     border: none;
     color: white;
     padding: 1rem 2rem;
-    border-radius: 0.75rem;
+    border-radius: 2rem;
     font-weight: 600;
-    box-shadow: var(--shadow-brand);
-    transition: var(--transition-smooth);
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-premium);
     position: relative;
     overflow: hidden;
   }
 
-  .btn-premium:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
+  .btn-iphone:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-large);
   }
 
-  .btn-premium::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+  .btn-iphone-secondary {
+    background: var(--gradient-titanium);
+    color: white;
   }
 
-  .btn-premium:hover::before {
-    left: 100%;
-  }
-
-  /* Professional Cards */
-  .card-professional {
-    background: rgba(255, 255, 255, 0.98);
-    border: 1px solid rgba(240, 100%, 27%, 0.1);
-    border-radius: 1rem;
-    box-shadow: var(--shadow-brand);
-    transition: var(--transition-smooth);
+  /* Premium Product Cards */
+  .card-iphone {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-premium);
     overflow: hidden;
   }
 
-  .dark .card-professional {
-    background: rgba(34, 34, 50, 0.98);
-    border: 1px solid rgba(220, 100%, 60%, 0.15);
+  .card-iphone:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-product);
+    border-color: hsl(var(--primary) / 0.2);
   }
 
-  .card-professional:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-neural);
-    border-color: rgba(240, 100%, 27%, 0.2);
-  }
-
-  /* Advanced Typography */
-  .text-display {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* iPhone Typography */
+  .text-iphone-display {
+    font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
   }
 
-  .text-body-premium {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  .text-iphone-body {
+    font-family: 'SF Pro Text', -apple-system, system-ui, sans-serif;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.5;
     color: hsl(var(--muted-foreground));
   }
 
-  /* Professional Pricing Display */
-  .pricing-display {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Product Pricing Display */
+  .pricing-iphone {
+    font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif;
     font-weight: 800;
-    font-size: 2.5rem;
-    background: var(--brand-gradient-primary);
+    font-size: 3rem;
+    background: var(--gradient-premium);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Enhanced Neural Animations */
-  .animate-professional-float {
-    animation: professional-float 8s ease-in-out infinite;
+  /* Product Hero Section */
+  .hero-product {
+    background: 
+      radial-gradient(ellipse at top, hsl(var(--primary) / 0.1) 0%, transparent 70%),
+      hsl(var(--background));
   }
 
-  @keyframes professional-float {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    33% {
-      transform: translateY(-10px) rotate(1deg);
-    }
-    66% {
-      transform: translateY(-5px) rotate(-1deg);
-    }
+  /* Interactive Product Showcase */
+  .product-showcase {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .product-showcase:hover .product-image {
+    transform: rotateX(5deg) rotateY(-5deg) scale(1.05);
+  }
+
+  .product-image {
+    transition: var(--transition-premium);
+    transform-origin: center center;
   }

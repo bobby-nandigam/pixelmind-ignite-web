@@ -21,100 +21,100 @@ import {
 const Services = () => {
   const aiProducts = [
     {
-      title: "AI Agent Builder Pro",
-      subtitle: "Create Intelligent Autonomous Agents",
-      description: "Build sophisticated AI agents that can handle complex workflows, customer interactions, and business processes. Our visual builder makes it easy to create agents that learn, adapt, and scale with your business needs.",
+      title: "NeuroForge Studio",
+      subtitle: "Visual AI Model Builder",
+      description: "Create sophisticated neural networks without code using our intuitive drag-and-drop interface. Build, train, and deploy AI models for any use case in minutes, not months.",
       icon: Bot,
       features: [
-        "Visual Agent Designer",
-        "Multi-Modal AI Capabilities", 
-        "Advanced Workflow Automation",
-        "Real-time Learning & Adaptation",
-        "Enterprise-Grade Security",
-        "API & Integration Hub"
+        "Visual Neural Network Designer",
+        "Auto-Optimization Engine", 
+        "Real-time Model Training",
+        "One-Click Deployment",
+        "Performance Monitoring",
+        "API Integration Hub"
       ],
       deliverables: [
-        "Custom AI Agent Platform",
-        "Multi-Channel Deployment",
-        "Analytics & Monitoring Dashboard",
-        "24/7 Support & Maintenance"
+        "Custom AI Model Platform",
+        "Training Infrastructure",
+        "Deployment Pipeline",
+        "24/7 Technical Support"
       ],
-      pricing: "₹8,999/month",
-      users: "Unlimited Agents",
-      color: "from-blue-600 to-purple-600",
+      pricing: "₹12,999/month",
+      users: "Unlimited Models",
+      color: "from-blue-600 via-purple-600 to-indigo-800",
       highlight: "Most Popular"
     },
     {
-      title: "Neural Workflow Engine",
-      subtitle: "Intelligent Process Automation",
-      description: "Transform your business processes with AI-powered workflow automation. Connect systems, automate decisions, and orchestrate complex operations with intelligent workflows that adapt to your business logic.",
-      icon: Workflow,
+      title: "DataFlow Intelligence",
+      subtitle: "Smart Data Processing Engine",
+      description: "Transform raw data into intelligent insights using advanced AI algorithms. Process any data format, extract patterns, and generate actionable intelligence automatically.",
+      icon: Database,
       features: [
-        "Drag & Drop Workflow Builder",
-        "AI-Powered Decision Making",
-        "Smart Data Processing",
-        "Multi-System Integration",
+        "Multi-Format Data Ingestion",
+        "Intelligent Pattern Recognition",
+        "Auto-Feature Engineering",
+        "Real-time Processing",
         "Predictive Analytics",
-        "Auto-Scaling Infrastructure"
+        "Custom Visualization"
       ],
       deliverables: [
-        "Custom Workflow Platform",
-        "System Integrations",
-        "Performance Analytics",
+        "Data Processing Platform",
+        "Custom Analytics Dashboard",
+        "ML Pipeline Setup",
         "Training & Documentation"
       ],
-      pricing: "₹12,999/month",
-      users: "Enterprise Scale",
-      color: "from-emerald-600 to-teal-600",
+      pricing: "₹18,999/month",
+      users: "Unlimited Data Sources",
+      color: "from-emerald-500 via-teal-600 to-cyan-700",
       highlight: "Enterprise"
     },
     {
-      title: "Cognitive Data Platform",
-      subtitle: "AI-Powered Data Intelligence",
-      description: "Unlock insights from your data with our advanced AI platform. Natural language queries, automated analysis, and intelligent visualization make data accessible to everyone in your organization.",
-      icon: Database,
-      features: [
-        "Natural Language to SQL",
-        "Automated Data Discovery",
-        "Intelligent Visualization",
-        "Predictive Analytics",
-        "Real-time Processing",
-        "Multi-Source Integration"
-      ],
-      deliverables: [
-        "AI Data Platform",
-        "Custom Dashboards",
-        "Data Pipeline Setup",
-        "Training & Support"
-      ],
-      pricing: "₹15,999/month",
-      users: "Unlimited Users",
-      color: "from-violet-600 to-purple-600",
-      highlight: "Premium"
-    },
-    {
-      title: "Conversational AI Suite",
-      subtitle: "Advanced Chatbot & Voice AI",
-      description: "Create sophisticated conversational experiences with our AI suite. Build chatbots, voice assistants, and interactive AI that understand context, emotion, and intent for exceptional user experiences.",
+      title: "ConversaGenius AI",
+      subtitle: "Advanced Conversational Platform",
+      description: "Build human-like AI assistants that understand context, emotion, and intent. Create sophisticated chatbots and voice agents for any industry or use case.",
       icon: MessageSquare,
       features: [
-        "Multilingual Conversation AI",
-        "Emotion & Sentiment Analysis",
+        "Multi-Language Understanding",
+        "Emotion & Context Awareness",
         "Voice & Text Integration",
-        "Context-Aware Responses",
-        "Learning from Interactions",
+        "Personality Customization",
+        "Learning from Conversations",
         "Omnichannel Deployment"
       ],
       deliverables: [
         "Custom Conversational AI",
         "Multi-Platform Integration",
-        "Analytics Dashboard",
-        "Ongoing Optimization"
+        "Analytics & Insights",
+        "Continuous Optimization"
       ],
-      pricing: "₹6,999/month",
-      users: "100K Conversations",
-      color: "from-cyan-600 to-blue-600",
+      pricing: "₹8,999/month",
+      users: "500K Conversations",
+      color: "from-orange-500 via-red-500 to-pink-600",
       highlight: "Best Value"
+    },
+    {
+      title: "VisionCraft AI",
+      subtitle: "Computer Vision Platform",
+      description: "Build powerful computer vision applications without coding. Process images, videos, and real-time camera feeds with state-of-the-art AI models.",
+      icon: Brain,
+      features: [
+        "Object Detection & Recognition",
+        "Facial Recognition System",
+        "Video Analytics Engine",
+        "Real-time Processing",
+        "Custom Model Training",
+        "Edge Device Deployment"
+      ],
+      deliverables: [
+        "Computer Vision Platform",
+        "Custom Detection Models",
+        "Mobile & Web SDKs",
+        "Implementation Support"
+      ],
+      pricing: "₹22,999/month",
+      users: "Unlimited Processing",
+      color: "from-violet-600 via-purple-600 to-indigo-800",
+      highlight: "Premium"
     }
   ];
 
@@ -169,20 +169,35 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-muted/40 to-background neural-bg relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-small opacity-5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section className="relative pt-32 pb-20 overflow-hidden hero-product">
+        <div className="absolute inset-0 mesh-gradient" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <Badge className="mb-6 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 text-lg">
-              AI Product Platform
+            <Badge className="mb-8 glass-premium px-8 py-4 text-xl font-semibold">
+              <Sparkles className="w-6 h-6 mr-3" />
+              No-Code AI Platform
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-8">
-              Build Enterprise <span className="text-gradient-hero">AI Solutions</span>
+            
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-iphone-display">
+              Build AI Models
+              <span className="block text-gradient-premium">Without Code</span>
             </h1>
-            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Create powerful AI agents, intelligent workflows, and data platforms without coding. 
-              Our no-code platform empowers enterprises to build custom AI solutions that scale.
+            
+            <p className="text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed text-iphone-body mb-12">
+              Empower everyone in your organization to create sophisticated AI solutions. 
+              Our visual platform makes advanced AI accessible to teams of all technical levels.
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-md mx-auto">
+              <Button size="lg" className="btn-iphone text-xl px-10 py-6">
+                Start Building Free
+                <ArrowRight className="ml-3 h-6 w-6" />
+              </Button>
+              <Button size="lg" variant="outline" className="glass-premium text-xl px-10 py-6 hover-lift-soft">
+                Watch Demo
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -196,80 +211,98 @@ const Services = () => {
               const isEven = index % 2 === 0;
               
               return (
-                <Card key={index} className="overflow-hidden hover-lift card-professional relative">
+                <Card key={index} className="card-iphone overflow-hidden relative">
                   {product.highlight && (
-                    <div className="absolute top-4 right-4 z-10">
-                      <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-1">
+                    <div className="absolute top-6 right-6 z-20">
+                      <Badge className="glass-premium backdrop-blur-md px-4 py-2 text-sm font-semibold">
                         {product.highlight}
                       </Badge>
                     </div>
                   )}
                   
                   <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
-                    <div className={`bg-gradient-to-br ${product.color} p-12 lg:p-16 text-white relative ${!isEven ? 'lg:col-start-2' : ''}`}>
-                      <div className="absolute inset-0 neural-bg opacity-30" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-center mb-10">
-                          <div className="p-5 bg-white/20 rounded-3xl mr-6 glass-card backdrop-blur-sm">
-                            <Icon className="h-12 w-12" />
-                          </div>
-                          <div>
-                            <h2 className="text-5xl font-display font-bold text-display mb-2">{product.title}</h2>
-                            <p className="text-white/90 text-xl font-medium">{product.subtitle}</p>
+                    {/* Product Visual */}
+                    <div className={`relative p-12 lg:p-16 ${!isEven ? 'lg:col-start-2' : ''}`}>
+                      <div className="product-showcase">
+                        <div className={`relative h-96 rounded-3xl bg-gradient-to-br ${product.color} p-8 overflow-hidden product-image`}>
+                          <div className="absolute inset-0 mesh-gradient opacity-40" />
+                          
+                          <div className="relative z-10 h-full flex flex-col justify-between text-white">
+                            <div className="flex items-start justify-between">
+                              <div className="p-4 glass-premium rounded-2xl backdrop-blur-sm">
+                                <Icon className="h-10 w-10" />
+                              </div>
+                            </div>
+
+                            <div className="text-center">
+                              <h3 className="text-3xl font-bold mb-2 text-iphone-display">
+                                {product.title}
+                              </h3>
+                              <p className="text-lg opacity-90 mb-6">
+                                {product.subtitle}
+                              </p>
+                              
+                              <div className="grid grid-cols-2 gap-4 text-center">
+                                <div className="glass-premium p-4 rounded-xl backdrop-blur-sm">
+                                  <div className="text-2xl font-bold">{product.pricing}</div>
+                                  <div className="text-xs opacity-70">per month</div>
+                                </div>
+                                <div className="glass-premium p-4 rounded-xl backdrop-blur-sm">
+                                  <div className="text-lg font-bold">{product.users}</div>
+                                  <div className="text-xs opacity-70">included</div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        
-                        <p className="text-xl text-white/95 mb-12 leading-relaxed font-medium">
-                          {product.description}
-                        </p>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-                          <div className="glass-card p-6 rounded-2xl backdrop-blur-sm">
-                            <h4 className="font-bold mb-3 text-white/90 text-sm uppercase tracking-wider">Monthly Investment</h4>
-                            <p className="text-4xl font-display font-bold text-white">{product.pricing}</p>
-                          </div>
-                          <div className="glass-card p-6 rounded-2xl backdrop-blur-sm">
-                            <h4 className="font-bold mb-3 text-white/90 text-sm uppercase tracking-wider">Scale</h4>
-                            <p className="text-xl font-display font-bold text-white">{product.users}</p>
-                          </div>
-                        </div>
-
-                        <Button size="lg" variant="secondary" className="btn-premium hover-lift text-xl px-10 py-6 font-bold">
-                          Start Building Today
-                          <ArrowRight className="ml-3 h-7 w-7" />
-                        </Button>
                       </div>
                     </div>
 
-                    <div className={`p-12 lg:p-16 bg-card glass-card ${!isEven ? 'lg:col-start-1' : ''}`}>
-                      <div className="mb-12">
-                        <h3 className="text-3xl font-display font-bold mb-8 text-gradient-hero">
-                          Enterprise Features
+                    {/* Product Details */}
+                    <div className={`p-12 lg:p-16 flex flex-col justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
+                      <div className="mb-8">
+                        <h3 className="text-4xl font-bold mb-4 text-iphone-display">
+                          {product.title}
                         </h3>
+                        <p className="text-xl text-muted-foreground mb-8 text-iphone-body leading-relaxed">
+                          {product.description}
+                        </p>
+                      </div>
+
+                      <div className="mb-8">
+                        <h4 className="text-lg font-semibold mb-6 text-iphone-display">Platform Features</h4>
                         <div className="grid grid-cols-1 gap-4">
                           {product.features.map((feature, fIndex) => (
-                            <div key={fIndex} className="flex items-start gap-4 p-4 rounded-xl hover:bg-muted/30 transition-colors">
-                              <CheckCircle className="h-6 w-6 text-emerald-500 flex-shrink-0 mt-1" />
-                              <span className="text-lg font-medium text-foreground">{feature}</span>
+                            <div key={fIndex} className="flex items-center gap-4 p-4 rounded-xl hover:bg-muted/50 transition-colors hover-lift-soft">
+                              <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
+                              <span className="text-iphone-body font-medium">{feature}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      <div className="glass-card p-8 rounded-2xl border border-primary/10">
-                        <h3 className="text-3xl font-display font-bold mb-8 text-gradient-neural">
-                          What You Get
-                        </h3>
-                        <ul className="space-y-5">
+                      <div className="glass-premium p-8 rounded-2xl mb-8">
+                        <h4 className="text-lg font-semibold mb-6 text-gradient-premium">
+                          Complete Solution Includes
+                        </h4>
+                        <ul className="space-y-4">
                           {product.deliverables.map((deliverable, dIndex) => (
                             <li key={dIndex} className="flex items-start gap-4">
-                              <div className="w-4 h-4 bg-gradient-to-r from-primary to-secondary rounded-full flex-shrink-0 mt-2" />
-                              <span className="text-lg text-muted-foreground font-medium">{deliverable}</span>
+                              <div className="w-2 h-2 rounded-full bg-gradient-blue flex-shrink-0 mt-3" />
+                              <span className="text-muted-foreground text-iphone-body">{deliverable}</span>
                             </li>
                           ))}
                         </ul>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button className="btn-iphone flex-1">
+                          Start Free Trial
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                        <Button variant="outline" className="glass-premium hover-lift-soft">
+                          Learn More
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -364,35 +397,48 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary via-secondary to-accent text-white relative overflow-hidden">
-        <div className="absolute inset-0 neural-bg opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent" />
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10" />
+        <div className="absolute inset-0 mesh-gradient" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <Sparkles className="h-16 w-16 mx-auto mb-6 animate-pulse-glow" />
+          <div className="mb-12">
+            <Sparkles className="h-20 w-20 mx-auto mb-8 text-gradient-premium animate-float-soft" />
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">
-            Ready to Build Your AI Empire?
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-iphone-display">
+            Transform Your Business
+            <span className="block text-gradient-premium">With AI Today</span>
           </h2>
-          <p className="text-2xl mb-12 max-w-3xl mx-auto opacity-95 font-medium">
-            Join 500+ enterprises who have transformed their operations with our AI platform. 
-            Start your free trial and build your first AI solution in minutes.
+          
+          <p className="text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto text-iphone-body leading-relaxed">
+            Join thousands of forward-thinking companies who've accelerated their growth with our 
+            no-code AI platform. Build your first AI solution in minutes, not months.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <Button size="lg" variant="secondary" className="btn-premium text-xl px-12 py-8 hover-lift font-bold">
-              Start Free Enterprise Trial
+          <div className="flex flex-col sm:flex-row gap-8 justify-center max-w-2xl mx-auto mb-12">
+            <Button size="lg" className="btn-iphone text-xl px-12 py-8 font-bold">
+              Start Building for Free
               <ArrowRight className="ml-3 h-7 w-7" />
             </Button>
-            <Button size="lg" variant="outline" className="text-xl px-12 py-8 border-white/30 text-white hover:bg-white/20 glass-card font-bold">
-              Book Demo Call
+            <Button size="lg" variant="outline" className="glass-premium text-xl px-12 py-8 hover-lift-soft font-bold">
+              Schedule Demo
             </Button>
           </div>
           
-          <div className="mt-12 text-lg opacity-80">
-            ✨ No credit card required • 30-day free trial • Enterprise support included
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-muted-foreground text-lg">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500" />
+              <span>No credit card required</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500" />
+              <span>30-day free trial</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-emerald-500" />
+              <span>Enterprise support</span>
+            </div>
           </div>
         </div>
       </section>
