@@ -21,100 +21,184 @@ import {
 const Services = () => {
   const aiProducts = [
     {
-      title: "NeuroForge Studio",
-      subtitle: "Visual AI Model Builder",
-      description: "Create sophisticated neural networks without code using our intuitive drag-and-drop interface. Build, train, and deploy AI models for any use case in minutes, not months.",
-      icon: Bot,
-      features: [
-        "Visual Neural Network Designer",
-        "Auto-Optimization Engine", 
-        "Real-time Model Training",
-        "One-Click Deployment",
-        "Performance Monitoring",
-        "API Integration Hub"
-      ],
-      deliverables: [
-        "Custom AI Model Platform",
-        "Training Infrastructure",
-        "Deployment Pipeline",
-        "24/7 Technical Support"
-      ],
-      pricing: "₹12,999/month",
-      users: "Unlimited Models",
-      color: "from-blue-600 via-purple-600 to-indigo-800",
-      highlight: "Most Popular"
-    },
-    {
-      title: "DataFlow Intelligence",
-      subtitle: "Smart Data Processing Engine",
-      description: "Transform raw data into intelligent insights using advanced AI algorithms. Process any data format, extract patterns, and generate actionable intelligence automatically.",
-      icon: Database,
-      features: [
-        "Multi-Format Data Ingestion",
-        "Intelligent Pattern Recognition",
-        "Auto-Feature Engineering",
-        "Real-time Processing",
-        "Predictive Analytics",
-        "Custom Visualization"
-      ],
-      deliverables: [
-        "Data Processing Platform",
-        "Custom Analytics Dashboard",
-        "ML Pipeline Setup",
-        "Training & Documentation"
-      ],
-      pricing: "₹18,999/month",
-      users: "Unlimited Data Sources",
-      color: "from-emerald-500 via-teal-600 to-cyan-700",
-      highlight: "Enterprise"
-    },
-    {
-      title: "ConversaGenius AI",
-      subtitle: "Advanced Conversational Platform",
-      description: "Build human-like AI assistants that understand context, emotion, and intent. Create sophisticated chatbots and voice agents for any industry or use case.",
-      icon: MessageSquare,
-      features: [
-        "Multi-Language Understanding",
-        "Emotion & Context Awareness",
-        "Voice & Text Integration",
-        "Personality Customization",
-        "Learning from Conversations",
-        "Omnichannel Deployment"
-      ],
-      deliverables: [
-        "Custom Conversational AI",
-        "Multi-Platform Integration",
-        "Analytics & Insights",
-        "Continuous Optimization"
-      ],
-      pricing: "₹8,999/month",
-      users: "500K Conversations",
-      color: "from-orange-500 via-red-500 to-pink-600",
-      highlight: "Best Value"
-    },
-    {
-      title: "VisionCraft AI",
-      subtitle: "Computer Vision Platform",
-      description: "Build powerful computer vision applications without coding. Process images, videos, and real-time camera feeds with state-of-the-art AI models.",
+      title: "QuantumMind Studio",
+      subtitle: "Next-Gen Neural Architecture Builder",
+      description: "Revolutionary quantum-inspired AI model builder with zero-code interface. Create transformer models, CNNs, and custom architectures using advanced AutoML with real-time optimization.",
       icon: Brain,
       features: [
-        "Object Detection & Recognition",
-        "Facial Recognition System",
-        "Video Analytics Engine",
-        "Real-time Processing",
+        "Quantum Neural Architecture Search",
+        "Auto-Hyperparameter Optimization",
+        "Multi-Modal Model Training",
+        "Edge Device Deployment",
+        "Federated Learning Support",
+        "Real-time Performance Analytics"
+      ],
+      implementation: [
+        "Drag-drop neural layers with quantum-inspired algorithms",
+        "Automated data preprocessing with feature engineering", 
+        "One-click cloud deployment with auto-scaling",
+        "Real-time monitoring with performance optimization"
+      ],
+      deliverables: [
+        "Custom Neural Networks",
+        "Cloud Training Pipeline",
+        "Mobile/Edge SDKs",
+        "Enterprise Support"
+      ],
+      pricing: "₹15,999/month",
+      users: "Unlimited Models",
+      color: "from-violet-600 via-purple-600 to-indigo-800",
+      highlight: "Enterprise AI"
+    },
+    {
+      title: "CognitiveFlow Engine",
+      subtitle: "Autonomous Decision Intelligence",
+      description: "Build self-learning decision systems that adapt and evolve. Create intelligent workflows with advanced reasoning capabilities and multi-agent orchestration.",
+      icon: Workflow,
+      features: [
+        "Multi-Agent System Builder",
+        "Autonomous Decision Trees",
+        "Real-time Learning Loops",
+        "Context-Aware Reasoning",
+        "Predictive Workflow Optimization",
+        "Natural Language Planning"
+      ],
+      implementation: [
+        "Visual workflow designer with AI agent coordination",
+        "Behavior scripting using natural language instructions",
+        "Real-time monitoring with adaptive optimization",
+        "Automated decision tree generation and learning"
+      ],
+      deliverables: [
+        "Intelligent Workflow System",
+        "Multi-Agent Platform",
+        "Decision Analytics",
+        "Custom Integration APIs"
+      ],
+      pricing: "₹22,999/month",
+      users: "Unlimited Workflows",
+      color: "from-emerald-500 via-teal-600 to-cyan-700",
+      highlight: "Most Advanced"
+    },
+    {
+      title: "NeuralVision Pro",
+      subtitle: "Advanced Computer Vision Platform",
+      description: "Create sophisticated computer vision models without coding. From object detection to facial recognition, build production-ready vision AI with enterprise-grade performance.",
+      icon: Bot,
+      features: [
+        "Advanced Object Detection",
+        "3D Scene Understanding",
+        "Real-time Video Analytics",
         "Custom Model Training",
-        "Edge Device Deployment"
+        "Edge Device Optimization",
+        "API-First Architecture"
+      ],
+      implementation: [
+        "Pre-trained model library with transfer learning",
+        "Custom dataset integration with augmentation",
+        "Real-time inference with sub-100ms latency",
+        "Mobile deployment with model compression"
       ],
       deliverables: [
         "Computer Vision Platform",
         "Custom Detection Models",
         "Mobile & Web SDKs",
-        "Implementation Support"
+        "Cloud Infrastructure"
       ],
-      pricing: "₹22,999/month",
+      pricing: "₹18,999/month",
       users: "Unlimited Processing",
-      color: "from-violet-600 via-purple-600 to-indigo-800",
-      highlight: "Premium"
+      color: "from-orange-500 via-red-500 to-pink-600",
+      highlight: "Vision Leader"
+    },
+    {
+      title: "DialogueGenius AI",
+      subtitle: "Conversational Intelligence Platform",
+      description: "Build human-like AI agents with advanced reasoning, memory, and personality. Create sophisticated chatbots and voice assistants with enterprise-grade natural language understanding.",
+      icon: MessageSquare,
+      features: [
+        "Advanced NLP Understanding",
+        "Emotional Intelligence",
+        "Multi-Turn Conversations",
+        "Voice & Text Integration",
+        "Custom Personality Design",
+        "Learning from Interactions"
+      ],
+      implementation: [
+        "Conversation flow builder with intent recognition",
+        "Emotional intelligence training with sentiment analysis",
+        "Multi-channel deployment across platforms",
+        "Real-time learning with conversation analytics"
+      ],
+      deliverables: [
+        "Conversational AI Platform",
+        "Multi-Channel Integration",
+        "Analytics & Insights",
+        "Voice Capabilities"
+      ],
+      pricing: "₹11,999/month",
+      users: "1M Conversations",
+      color: "from-blue-600 via-indigo-600 to-purple-700",
+      highlight: "Best Value"
+    },
+    {
+      title: "DataMind Intelligence",
+      subtitle: "Predictive Analytics Engine",
+      description: "Transform raw data into actionable insights using advanced machine learning. Build predictive models, anomaly detection systems, and intelligent forecasting without any coding.",
+      icon: BarChart3,
+      features: [
+        "AutoML Pipeline Builder",
+        "Time Series Forecasting",
+        "Anomaly Detection",
+        "Pattern Recognition",
+        "Real-time Processing",
+        "Custom Visualization"
+      ],
+      implementation: [
+        "Automated feature engineering with AI-driven selection",
+        "Model selection algorithms with hyperparameter tuning",
+        "Real-time deployment with streaming data processing",
+        "Custom dashboards with interactive visualizations"
+      ],
+      deliverables: [
+        "Predictive Analytics Platform",
+        "Custom ML Models",
+        "Real-time Dashboards",
+        "Data Pipeline"
+      ],
+      pricing: "₹19,999/month",
+      users: "Unlimited Data Sources",
+      color: "from-cyan-500 via-blue-600 to-indigo-700",
+      highlight: "Data Science"
+    },
+    {
+      title: "AgentForge Studio",
+      subtitle: "Multi-Agent System Builder",
+      description: "Create collaborative AI agent networks that work together to solve complex problems. Build autonomous agents with specialized skills and advanced coordination capabilities.",
+      icon: Users,
+      features: [
+        "Multi-Agent Orchestration",
+        "Autonomous Task Planning",
+        "Agent Communication Protocols",
+        "Skill-Based Architecture",
+        "Dynamic Team Formation",
+        "Continuous Learning"
+      ],
+      implementation: [
+        "Agent behavior modeling with skill specialization",
+        "Task distribution algorithms with load balancing",
+        "Communication interfaces with protocol management",
+        "Performance optimization with continuous learning"
+      ],
+      deliverables: [
+        "Multi-Agent Platform",
+        "Custom Agent Networks",
+        "Coordination System",
+        "Enterprise Integration"
+      ],
+      pricing: "₹25,999/month",
+      users: "Unlimited Agents",
+      color: "from-rose-500 via-pink-600 to-purple-700",
+      highlight: "Future Tech"
     }
   ];
 
@@ -147,19 +231,19 @@ const Services = () => {
 
   const testimonials = [
     {
-      quote: "We built 3 AI agents for customer service, sales, and operations in just 2 weeks. The platform is incredibly powerful yet intuitive. Our efficiency increased by 400%.",
+      quote: "We built 5 AI agents for different departments using AgentForge in just 3 weeks. The multi-agent coordination is phenomenal - our efficiency increased by 600%.",
       author: "Rajesh Kumar",
       title: "CTO",
       company: "TechCorp Industries, Hyderabad"
     },
     {
-      quote: "The Neural Workflow Engine transformed our entire supply chain management. We're processing 10x more data with intelligent automation that learns and improves daily.",
+      quote: "QuantumMind Studio transformed our R&D. We're now creating neural architectures that would have taken months in just days, with performance that exceeds expectations.",
       author: "Priya Sharma",
-      title: "Head of Operations", 
-      company: "Global Logistics Ltd, Delhi"
+      title: "Head of AI",
+      company: "Global Dynamics Ltd, Delhi"
     },
     {
-      quote: "Our data team can now focus on strategy instead of queries. The Cognitive Data Platform made complex analytics accessible to our entire organization.",
+      quote: "DataMind Intelligence revolutionized our analytics. We process 10TB+ data in real-time with predictive models that continuously improve themselves.",
       author: "Amit Patel",
       title: "Data Science Director",
       company: "FinTech Solutions, Mumbai"
@@ -279,6 +363,22 @@ const Services = () => {
                             </div>
                           ))}
                         </div>
+                      </div>
+
+                      <div className="glass-premium p-8 rounded-2xl mb-8">
+                        <h4 className="text-lg font-semibold mb-6 text-gradient-premium">
+                          How It Works
+                        </h4>
+                        <ul className="space-y-4">
+                          {product.implementation.map((impl, iIndex) => (
+                            <li key={iIndex} className="flex items-start gap-4">
+                              <div className="w-6 h-6 rounded-full bg-gradient-blue flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">
+                                {iIndex + 1}
+                              </div>
+                              <span className="text-muted-foreground text-iphone-body">{impl}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
 
                       <div className="glass-premium p-8 rounded-2xl mb-8">

@@ -1,93 +1,114 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowRight, User, TrendingUp, Brain, Zap } from "lucide-react";
+import { Calendar, Clock, ArrowRight, User, TrendingUp, Brain, Zap, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
   const featuredPost = {
-    title: "Why 2025 is the Year of AI-Driven Businesses",
-    excerpt: "Discover how artificial intelligence is reshaping industries and why businesses that don't adapt will be left behind. We explore the key trends, opportunities, and strategies for AI implementation.",
-    author: "PixelMind Labs Team",
-    date: "January 15, 2025",
-    readTime: "8 min read",
-    category: "AI Trends",
+    title: "Quantum-Enhanced AI: The September 2025 Breakthrough That's Changing Everything",
+    excerpt: "Just this month, quantum-enhanced neural networks achieved human-level reasoning in multiple domains. We break down the implications for businesses and how to prepare for the quantum AI revolution.",
+    author: "PixelMind Labs Research Team",
+    date: "September 22, 2025",
+    readTime: "12 min read",
+    category: "Quantum AI",
     image: "/placeholder.svg",
     featured: true
   };
 
   const blogPosts = [
     {
-      title: "The Story Behind PixelMind Labs",
-      excerpt: "From ideation to innovation - learn about our journey, challenges, and the vision that drives our AI solutions.",
-      author: "Founder's Desk",
-      date: "January 10, 2025",
-      readTime: "5 min read",
-      category: "Company",
+      title: "Multi-Agent Systems: September 2025 Production Deployment Success",
+      excerpt: "How Fortune 500 companies are now using our AgentSwarm platform for autonomous business operations, achieving 500% efficiency gains.",
+      author: "Enterprise Solutions Team",
+      date: "September 20, 2025",
+      readTime: "8 min read",
+      category: "Multi-Agent AI",
       image: "/placeholder.svg",
       icon: Brain
     },
     {
-      title: "Building Scalable AI Solutions: Best Practices",
-      excerpt: "Key principles and methodologies for developing AI systems that can grow with your business needs.",
-      author: "Engineering Team",
-      date: "January 8, 2025",
-      readTime: "12 min read",
-      category: "Development",
+      title: "Real-Time AI Model Training: The Zero-Latency Revolution",
+      excerpt: "Our latest breakthrough in continuous learning allows AI models to adapt in real-time without retraining, transforming how businesses handle dynamic data.",
+      author: "AI Research Lab",
+      date: "September 18, 2025",
+      readTime: "15 min read",
+      category: "Machine Learning",
       image: "/placeholder.svg",
       icon: Zap
     },
     {
-      title: "The Future of Healthcare AI: MediAssist Case Study",
-      excerpt: "How our healthcare AI assistant is transforming patient care and supporting medical professionals.",
-      author: "Product Team",
-      date: "January 5, 2025",
-      readTime: "10 min read",
+      title: "NeuroHealth AI Passes Clinical Trials: 95% Diagnostic Accuracy",
+      excerpt: "Our medical AI platform has officially been approved for clinical use, showing superior performance to human specialists in multiple diagnostic categories.",
+      author: "Healthcare AI Division",
+      date: "September 15, 2025",
+      readTime: "11 min read",
       category: "Healthcare",
       image: "/placeholder.svg",
       icon: Brain
     },
     {
-      title: "Data Privacy in AI: Our Commitment to Security",
-      excerpt: "Understanding how we protect user data while delivering powerful AI insights and recommendations.",
-      author: "Security Team",
-      date: "January 2, 2025",
-      readTime: "7 min read",
-      category: "Security",
+      title: "Quantum Computing Meets AI: Production-Ready Quantum Neural Networks",
+      excerpt: "We've successfully deployed the first commercial quantum-enhanced neural networks, achieving 1000x speedup in complex reasoning tasks.",
+      author: "Quantum AI Team",
+      date: "September 12, 2025",
+      readTime: "13 min read",
+      category: "Quantum Computing",
       image: "/placeholder.svg",
       icon: Zap
     },
     {
-      title: "ChatMind AI: Revolutionizing Business Communication",
-      excerpt: "Deep dive into our conversational AI platform and how it's helping businesses automate customer interactions.",
-      author: "Product Team",
-      date: "December 28, 2024",
+      title: "Edge AI Revolution: Running GPT-Level Models on Smartphones",
+      excerpt: "Our breakthrough in model compression allows running large language models directly on mobile devices while maintaining full functionality.",
+      author: "Edge Computing Team",
+      date: "September 10, 2025",
       readTime: "9 min read",
-      category: "Product",
+      category: "Edge AI",
       image: "/placeholder.svg",
       icon: Brain
     },
     {
-      title: "From SQL to Insights: DataQuery AI Success Stories",
-      excerpt: "Real-world examples of how natural language database queries are transforming data analytics workflows.",
-      author: "Customer Success",
-      date: "December 25, 2024",
-      readTime: "6 min read",
-      category: "Analytics",
+      title: "FinanceIQ Platform: $10B+ Managed Through Autonomous AI Trading",
+      excerpt: "Our algorithmic trading platform now manages over $10 billion in assets, delivering consistent 25% better returns than traditional methods.",
+      author: "Financial AI Team",
+      date: "September 8, 2025",
+      readTime: "10 min read",
+      category: "Financial AI",
       image: "/placeholder.svg",
       icon: TrendingUp
+    },
+    {
+      title: "Building the Future: Our Vision for AI in 2026 and Beyond",
+      excerpt: "Looking ahead to the next phase of AI evolution, including consciousness simulation, cross-reality integration, and planetary-scale intelligence networks.",
+      author: "Chief Technology Officer",
+      date: "September 5, 2025",
+      readTime: "14 min read",
+      category: "Future Tech",
+      image: "/placeholder.svg",
+      icon: Sparkles
+    },
+    {
+      title: "Zero-Code AI: How Non-Technical Users Built 1M+ AI Models This Month",
+      excerpt: "September 2025 milestone: Over 1 million AI models created by business users without writing a single line of code using our platform.",
+      author: "Product Success Team",
+      date: "September 3, 2025",
+      readTime: "7 min read",
+      category: "No-Code AI",
+      image: "/placeholder.svg",
+      icon: Zap
     }
   ];
 
   const categories = [
-    { name: "All Posts", count: 7 },
-    { name: "AI Trends", count: 1 },
-    { name: "Company", count: 1 },
-    { name: "Development", count: 1 },
+    { name: "All Posts", count: 9 },
+    { name: "Quantum AI", count: 2 },
+    { name: "Multi-Agent AI", count: 1 },
+    { name: "Machine Learning", count: 1 },
     { name: "Healthcare", count: 1 },
-    { name: "Security", count: 1 },
-    { name: "Product", count: 1 },
-    { name: "Analytics", count: 1 }
+    { name: "Edge AI", count: 1 },
+    { name: "Financial AI", count: 1 },
+    { name: "Future Tech", count: 1 },
+    { name: "No-Code AI", count: 1 }
   ];
 
   return (

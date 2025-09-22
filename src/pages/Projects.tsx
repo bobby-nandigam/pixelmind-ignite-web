@@ -1,9 +1,12 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import chatmindPreview from "@/assets/chatmind-preview.jpg";
+import dataqueryPreview from "@/assets/dataquery-preview.jpg"; 
+import mediassistPreview from "@/assets/mediassist-preview.jpg";
 import { 
   ArrowRight, 
-  Sparkles, 
+  CheckCircle, 
   Users, 
   TrendingUp, 
   Heart,
@@ -14,144 +17,290 @@ import {
   Zap,
   Star,
   Award,
-  ChevronRight
+  ChevronRight,
+  Code2,
+  BarChart3,
+  Activity
 } from "lucide-react";
 
 const Projects = () => {
-  const aiProducts = [
+  const projects = [
     {
       id: 1,
-      name: "NeuroMind Pro",
-      tagline: "Advanced AI Brain for Everyone",
-      description: "Build sophisticated neural networks with zero coding. Our visual AI builder creates intelligent systems that learn, adapt, and scale automatically.",
-      image: "/src/assets/chatmind-preview.jpg",
-      color: "from-blue-600 via-purple-600 to-indigo-800",
-      features: ["Visual Neural Designer", "AutoML Integration", "Real-time Learning", "Enterprise Security"],
-      metrics: { accuracy: "99.2%", speed: "5x Faster", users: "50K+" },
-      price: "₹29,999",
-      category: "AI Development",
-      badge: "Most Popular"
+      title: "QuantumChat Enterprise",
+      description: "Revolutionary conversational AI with quantum-inspired neural architecture. Processes complex multi-turn conversations with human-level understanding and emotional intelligence.",
+      image: chatmindPreview,
+      category: "Advanced Conversational AI",
+      tags: ["Quantum NLP", "Emotional AI", "Multi-Agent"],
+      status: "Live Production",
+      complexity: "Enterprise Scale",
+      technology: ["Transformer Architecture", "Quantum Computing", "Edge AI"],
+      features: [
+        "Quantum-enhanced language understanding across 100+ languages",
+        "Advanced emotional intelligence with micro-expression analysis",
+        "Multi-agent conversation orchestration",
+        "Real-time learning and personality adaptation",
+        "Cross-platform voice, text, and video integration",
+        "Enterprise-grade security with end-to-end encryption"
+      ],
+      results: [
+        "600% improvement in conversation quality scores",
+        "95% reduction in escalation to human agents",
+        "99.9% uptime with sub-100ms response times",
+        "1B+ conversations processed with 98% satisfaction rate"
+      ],
+      implementation: [
+        "Zero-code conversation designer",
+        "Automated training pipeline",
+        "One-click deployment to any platform",
+        "Real-time performance optimization"
+      ]
     },
     {
       id: 2,
-      name: "DataGenius Suite",
-      tagline: "Intelligent Data Platform",
-      description: "Transform raw data into actionable insights using advanced AI algorithms. No data science expertise required.",
-      image: "/src/assets/dataquery-preview.jpg",
-      color: "from-emerald-500 via-teal-600 to-cyan-700",
-      features: ["Natural Language Queries", "Auto-Visualization", "Predictive Analytics", "Real-time Processing"],
-      metrics: { insights: "10M+", accuracy: "94.8%", time: "80% Saved" },
-      price: "₹19,999",
-      category: "Data Intelligence",
-      badge: "Best Value"
+      title: "VisionMind Pro",
+      description: "Next-generation computer vision platform with 3D scene understanding and real-time object manipulation. Processes millions of images with human-level accuracy.",
+      image: mediassistPreview,
+      category: "Advanced Computer Vision",
+      tags: ["3D Vision", "Real-time Processing", "Edge AI"],
+      status: "Live Production",
+      complexity: "High Performance",
+      technology: ["Neural Architecture Search", "Edge Computing", "3D Reconstruction"],
+      features: [
+        "Advanced 3D scene reconstruction and understanding",
+        "Real-time object detection with 99.7% accuracy",
+        "Multi-camera fusion and depth estimation",
+        "Custom model training with synthetic data generation",
+        "Edge device optimization for mobile and IoT",
+        "API-first architecture with sub-10ms inference"
+      ],
+      results: [
+        "10x faster processing than traditional methods",
+        "99.7% accuracy on complex visual tasks",
+        "Real-time processing on mobile devices",
+        "50M+ images processed daily across 500+ clients"
+      ],
+      implementation: [
+        "Drag-and-drop model builder",
+        "Automated dataset optimization",
+        "Real-time deployment pipeline",
+        "Performance monitoring dashboard"
+      ]
     },
     {
       id: 3,
-      name: "VoiceFlow AI",
-      tagline: "Conversational Intelligence",
-      description: "Create human-like AI assistants that understand context, emotion, and intent across multiple languages.",
-      image: "/src/assets/mediassist-preview.jpg",
-      color: "from-orange-500 via-red-500 to-pink-600",
-      features: ["Multi-language Support", "Emotion Recognition", "Context Awareness", "Voice Synthesis"],
-      metrics: { languages: "150+", accuracy: "96.7%", interactions: "1M+" },
-      price: "₹24,999",
-      category: "Conversational AI",
-      badge: "Premium"
+      title: "DataGenius Analytics",
+      description: "Autonomous data intelligence platform that discovers patterns, predicts trends, and generates actionable insights without human intervention using advanced AutoML.",
+      image: dataqueryPreview,
+      category: "Predictive Analytics AI",
+      tags: ["AutoML", "Predictive Modeling", "Time Series"],
+      status: "Live Production", 
+      complexity: "Enterprise Scale",
+      technology: ["AutoML Pipelines", "Time Series Analysis", "Anomaly Detection"],
+      features: [
+        "Fully automated feature engineering and selection",
+        "Advanced time series forecasting with uncertainty quantification",
+        "Real-time anomaly detection and alerting",
+        "Natural language query interface for complex analytics",
+        "Multi-modal data fusion (text, images, numerical)",
+        "Automated report generation and insight discovery"
+      ],
+      results: [
+        "300% improvement in forecast accuracy",
+        "80% reduction in time-to-insight",
+        "Automated detection of 95% of anomalies",
+        "Processing 10TB+ data daily with real-time updates"
+      ],
+      implementation: [
+        "No-code pipeline builder",
+        "Automated model selection",
+        "Real-time data processing",
+        "Custom dashboard creation"
+      ]
+    },
+    {
+      id: 4,
+      title: "AgentSwarm Platform",
+      description: "Multi-agent AI system where specialized AI agents collaborate autonomously to solve complex business problems. Features dynamic team formation and task distribution.",
+      image: chatmindPreview,
+      category: "Multi-Agent Systems",
+      tags: ["Agent Networks", "Autonomous Systems", "Collaboration"],
+      status: "Beta Testing",
+      complexity: "Cutting Edge",
+      technology: ["Multi-Agent RL", "Swarm Intelligence", "Distributed Computing"],
+      features: [
+        "Autonomous agent creation with specialized skills",
+        "Dynamic team formation based on task requirements",
+        "Inter-agent communication and knowledge sharing",
+        "Self-improving agent behaviors through reinforcement learning",
+        "Task planning and execution coordination",
+        "Real-time monitoring and performance optimization"
+      ],
+      results: [
+        "500% improvement in complex problem solving",
+        "Autonomous handling of 90% of business processes",
+        "24/7 operation with continuous learning",
+        "Coordination of 1000+ agents simultaneously"
+      ],
+      implementation: [
+        "Visual agent behavior designer", 
+        "Automated task distribution",
+        "Real-time coordination dashboard",
+        "Performance analytics and optimization"
+      ]
+    },
+    {
+      id: 5,
+      title: "NeuroHealth AI",
+      description: "Advanced medical AI that combines computer vision, NLP, and predictive analytics for comprehensive healthcare automation. Processes medical imaging, reports, and patient data.",
+      image: mediassistPreview,
+      category: "Healthcare AI",
+      tags: ["Medical AI", "Diagnostic Imaging", "Clinical Decision"],
+      status: "Clinical Trials",
+      complexity: "Medical Grade",
+      technology: ["Medical Imaging AI", "Clinical NLP", "Predictive Diagnostics"],
+      features: [
+        "Advanced medical imaging analysis with radiologist-level accuracy",
+        "Clinical report generation and summarization",
+        "Drug interaction and dosage optimization",
+        "Patient risk stratification and early warning systems",
+        "Multi-modal medical data integration",
+        "HIPAA-compliant processing and storage"
+      ],
+      results: [
+        "95% accuracy in diagnostic imaging",
+        "60% reduction in diagnosis time",
+        "Early detection of critical conditions with 98% accuracy",
+        "Processing 100K+ medical records daily"
+      ],
+      implementation: [
+        "Medical workflow integration",
+        "Automated report generation",
+        "Real-time alert systems",
+        "Clinical decision support"
+      ]
+    },
+    {
+      id: 6,
+      title: "FinanceIQ Platform",
+      description: "Intelligent financial analysis and trading AI that processes market data, news sentiment, and economic indicators for autonomous investment decisions and risk management.",
+      image: dataqueryPreview,
+      category: "Financial AI",
+      tags: ["Algorithmic Trading", "Risk Analysis", "Market Intelligence"],
+      status: "Live Production",
+      complexity: "High Frequency",
+      technology: ["Quantitative Analysis", "Sentiment Analysis", "Real-time Processing"],
+      features: [
+        "Real-time market data processing and analysis",
+        "Multi-source news and sentiment analysis",
+        "Automated trading strategy optimization",
+        "Advanced risk management and portfolio balancing",
+        "Regulatory compliance and audit trail",
+        "Custom financial model building and backtesting"
+      ],
+      results: [
+        "25% better returns than traditional methods",
+        "99.9% uptime for high-frequency trading",
+        "Processing 1M+ market events per second",
+        "Risk reduction of 40% through advanced analytics"
+      ],
+      implementation: [
+        "No-code strategy builder",
+        "Automated backtesting engine",
+        "Real-time deployment system",
+        "Performance tracking dashboard"
+      ]
     }
   ];
 
   const achievements = [
     { 
       icon: Award, 
-      metric: "500K+", 
-      label: "AI Models Created",
+      metric: "2M+", 
+      label: "AI Models Deployed",
       color: "text-blue-600"
     },
     { 
       icon: Users, 
-      metric: "10K+", 
+      metric: "50K+", 
       label: "Enterprise Clients",
       color: "text-emerald-600"
     },
     { 
       icon: Star, 
-      metric: "98.5%", 
-      label: "Satisfaction Rate",
+      metric: "99.2%", 
+      label: "Success Rate",
       color: "text-orange-600"
     },
     { 
       icon: Zap, 
-      metric: "2.5M+", 
-      label: "Hours Automated",
+      metric: "100M+", 
+      label: "Processes Automated",
       color: "text-purple-600"
     }
   ];
 
   const testimonials = [
     {
-      quote: "NeuroMind Pro helped us build a customer service AI that handles 90% of inquiries automatically. Implementation took just 2 weeks.",
+      quote: "QuantumChat Enterprise revolutionized our customer service. The emotional intelligence is phenomenal - it handles complex queries better than our human agents.",
       author: "Rahul Sharma",
       title: "CTO, TechVision India",
       avatar: "R",
       rating: 5
     },
     {
-      quote: "DataGenius transformed our analytics. We now get insights in minutes that used to take our team weeks to generate.",
+      quote: "VisionMind Pro processes our factory's visual inspection 100x faster with 99.7% accuracy. The real-time 3D understanding is game-changing.",
       author: "Priya Patel",
-      title: "Head of Data, FinTech Solutions",
+      title: "Head of Operations, Manufacturing Co",
       avatar: "P",
       rating: 5
     },
     {
-      quote: "The VoiceFlow AI we built serves 100K+ customers daily in 12 languages. The ROI has been incredible.",
+      quote: "AgentSwarm Platform manages our entire supply chain autonomously. 1000+ AI agents working together seamlessly - it's like science fiction come to life.",
       author: "Amit Kumar",
-      title: "VP Engineering, GlobalCorp",
+      title: "CEO, Global Logistics",
       avatar: "A",
       rating: 5
     }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden hero-product">
         <div className="absolute inset-0 mesh-gradient" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 glass-premium px-6 py-3 text-lg font-semibold">
-              <Sparkles className="w-5 h-5 mr-2" />
-              AI Product Showcase
+          <div className="text-center mb-20">
+            <Badge className="mb-8 glass-premium px-8 py-4 text-xl font-semibold">
+              <Activity className="w-6 h-6 mr-3" />
+              Live AI Projects
             </Badge>
             
             <h1 className="text-6xl md:text-8xl font-bold mb-8 text-iphone-display">
-              Build AI That
-              <span className="block text-gradient-premium">Changes Everything</span>
+              Enterprise AI
+              <span className="block text-gradient-premium">In Action</span>
             </h1>
             
-            <p className="text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 text-iphone-body">
-              Create powerful AI solutions without writing code. Our enterprise platform 
-              empowers everyone to build, deploy, and scale intelligent systems.
+            <p className="text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed text-iphone-body mb-12">
+              Explore real-world implementations of our AI platforms. From quantum-enhanced conversations 
+              to autonomous multi-agent systems - see how enterprises are transforming with our technology.
             </p>
 
             {/* Achievement Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
-                  <div key={index} className="text-center animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
-                    <div className="flex justify-center mb-4">
-                      <div className="p-4 glass-premium rounded-2xl">
-                        <Icon className={`h-8 w-8 ${achievement.color}`} />
-                      </div>
-                    </div>
-                    <div className="text-3xl font-bold text-iphone-display mb-2 text-gradient-premium">
+                  <Card key={index} className="glass-iphone p-6 text-center hover-lift-soft">
+                    <Icon className={`h-8 w-8 mx-auto mb-3 ${achievement.color}`} />
+                    <div className="text-3xl font-bold text-gradient-iphone mb-2">
                       {achievement.metric}
                     </div>
-                    <div className="text-muted-foreground text-iphone-body">
+                    <div className="text-sm text-muted-foreground">
                       {achievement.label}
                     </div>
-                  </div>
+                  </Card>
                 );
               })}
             </div>
@@ -159,138 +308,182 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Products Showcase */}
-      <section className="py-32">
+      {/* Projects Showcase */}
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-iphone-display">
-              Our <span className="text-gradient-blue">AI Products</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-iphone-body">
-              Enterprise-grade AI solutions designed for teams of all sizes
-            </p>
-          </div>
-
           <div className="space-y-32">
-            {aiProducts.map((product, index) => {
+            {projects.map((project, index) => {
               const isEven = index % 2 === 0;
               
               return (
-                <div key={product.id} className="relative">
-                  <Card className="card-iphone overflow-hidden">
-                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
-                      {/* Product Visual */}
-                      <div className={`relative p-12 lg:p-16 ${!isEven ? 'lg:col-start-2' : ''}`}>
-                        <div className="product-showcase">
-                          <div className={`relative h-96 rounded-3xl bg-gradient-to-br ${product.color} p-8 overflow-hidden`}>
-                            <div className="absolute inset-0 mesh-gradient opacity-30" />
-                            
-                            {product.badge && (
-                              <Badge className="absolute top-6 right-6 bg-white/20 text-white backdrop-blur-sm">
-                                {product.badge}
-                              </Badge>
-                            )}
-
-                            <div className="relative z-10 h-full flex flex-col justify-between text-white">
-                              <div>
-                                <Badge className="mb-4 bg-white/20 text-white">
-                                  {product.category}
+                <Card key={project.id} className="card-iphone overflow-hidden relative">
+                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                    {/* Project Visual */}
+                    <div className={`relative p-12 lg:p-16 ${!isEven ? 'lg:col-start-2' : ''}`}>
+                      <div className="project-showcase">
+                        <div className="relative h-96 rounded-3xl overflow-hidden project-image">
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                          
+                          <Badge className="absolute top-6 left-6 glass-premium backdrop-blur-md">
+                            {project.status}
+                          </Badge>
+                          
+                          <div className="absolute bottom-6 left-6 right-6 text-white">
+                            <div className="flex flex-wrap gap-2 mb-4">
+                              {project.tags.map((tag, tIndex) => (
+                                <Badge key={tIndex} className="glass-premium backdrop-blur-sm text-white border-white/20">
+                                  {tag}
                                 </Badge>
-                                <h3 className="text-3xl font-bold mb-2 text-iphone-display">
-                                  {product.name}
-                                </h3>
-                                <p className="text-lg opacity-90">
-                                  {product.tagline}
-                                </p>
-                              </div>
-
-                              <div className="grid grid-cols-3 gap-4 text-center">
-                                {Object.entries(product.metrics).map(([key, value]) => (
-                                  <div key={key} className="glass-premium p-3 rounded-xl">
-                                    <div className="text-xl font-bold">{value}</div>
-                                    <div className="text-xs opacity-70 capitalize">{key}</div>
-                                  </div>
-                                ))}
-                              </div>
+                              ))}
                             </div>
                           </div>
                         </div>
                       </div>
+                    </div>
 
-                      {/* Product Details */}
-                      <div className={`p-12 lg:p-16 flex flex-col justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
-                        <div className="mb-8">
-                          <div className="pricing-iphone mb-4">{product.price}</div>
-                          <div className="text-muted-foreground mb-2">per month</div>
-                          <h3 className="text-4xl font-bold mb-4 text-iphone-display">
-                            {product.name}
-                          </h3>
-                          <p className="text-xl text-muted-foreground mb-8 text-iphone-body leading-relaxed">
-                            {product.description}
-                          </p>
-                        </div>
+                    {/* Project Details */}
+                    <div className={`p-12 lg:p-16 flex flex-col justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
+                      <div className="mb-8">
+                        <Badge className="mb-4 glass-iphone">
+                          {project.category}
+                        </Badge>
+                        <h3 className="text-4xl font-bold mb-4 text-iphone-display">
+                          {project.title}
+                        </h3>
+                        <p className="text-xl text-muted-foreground mb-8 text-iphone-body leading-relaxed">
+                          {project.description}
+                        </p>
+                      </div>
 
-                        <div className="mb-8">
-                          <h4 className="text-lg font-semibold mb-4 text-iphone-display">Key Features</h4>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            {product.features.map((feature, fIndex) => (
-                              <div key={fIndex} className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted/50 transition-colors">
-                                <div className="w-2 h-2 rounded-full bg-gradient-blue" />
-                                <span className="text-sm text-iphone-body">{feature}</span>
-                              </div>
-                            ))}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <Card className="glass-iphone p-6">
+                          <div className="text-lg font-semibold text-gradient-iphone mb-2">
+                            Status
                           </div>
-                        </div>
+                          <div className="text-sm text-muted-foreground">{project.status}</div>
+                        </Card>
+                        <Card className="glass-iphone p-6">
+                          <div className="text-lg font-semibold text-gradient-iphone mb-2">
+                            Complexity
+                          </div>
+                          <div className="text-sm text-muted-foreground">{project.complexity}</div>
+                        </Card>
+                        <Card className="glass-iphone p-6">
+                          <div className="text-lg font-semibold text-gradient-iphone mb-2">
+                            Category
+                          </div>
+                          <div className="text-sm text-muted-foreground">{project.category}</div>
+                        </Card>
+                      </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <Button className="btn-iphone flex-1">
-                            Start Building
-                            <ArrowRight className="ml-2 h-5 w-5" />
-                          </Button>
-                          <Button variant="outline" className="glass-premium hover-lift-soft">
-                            Learn More
-                          </Button>
+                      <div className="mb-8">
+                        <h4 className="text-xl font-semibold mb-6 text-iphone-display">Technology Stack</h4>
+                        <div className="flex flex-wrap gap-3 mb-6">
+                          {project.technology.map((tech, tIndex) => (
+                            <Badge key={tIndex} className="glass-iphone px-4 py-2 text-sm">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                        
+                        <h4 className="text-xl font-semibold mb-6 text-iphone-display">Advanced Features</h4>
+                        <div className="grid grid-cols-1 gap-4">
+                          {project.features.map((feature, fIndex) => (
+                            <div key={fIndex} className="flex items-start gap-4 p-4 rounded-xl glass-iphone hover-lift-soft">
+                              <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                              <span className="text-iphone-body">{feature}</span>
+                            </div>
+                          ))}
                         </div>
                       </div>
+
+                      <div className="mb-8">
+                        <h4 className="text-xl font-semibold mb-6 text-iphone-display">Implementation Process</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                          {project.implementation.map((impl, iIndex) => (
+                            <Card key={iIndex} className="glass-iphone p-6 hover-lift-soft">
+                              <div className="flex items-start gap-4">
+                                <div className="w-8 h-8 rounded-full bg-gradient-iphone flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                                  {iIndex + 1}
+                                </div>
+                                <div>
+                                  <div className="text-iphone-body font-medium">{impl}</div>
+                                </div>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                        
+                        <h4 className="text-xl font-semibold mb-6 text-iphone-display">Production Results</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {project.results.map((result, rIndex) => (
+                            <Card key={rIndex} className="glass-iphone p-6 hover-lift-soft">
+                              <div className="flex items-start gap-4">
+                                <div className="w-3 h-3 rounded-full bg-gradient-iphone flex-shrink-0 mt-2" />
+                                <div>
+                                  <div className="text-iphone-body font-medium">{result}</div>
+                                </div>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button className="btn-iphone flex-1">
+                          View Live Demo
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                        <Button variant="outline" className="glass-iphone hover-lift-soft">
+                          Technical Details
+                        </Button>
+                      </div>
                     </div>
-                  </Card>
-                </div>
+                  </div>
+                </Card>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-32 bg-muted/30">
+      {/* Success Stories */}
+      <section className="py-24 bg-gradient-to-br from-muted/30 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-iphone-display">
-              What Our <span className="text-gradient-premium">Clients Say</span>
+            <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">
+              Client <span className="text-gradient-hero">Success Stories</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="card-iphone p-8 hover-lift-soft">
-                <CardContent className="p-0">
-                  <div className="flex items-center mb-4">
+              <Card key={index} className="hover-lift card-professional glass-card">
+                <CardContent className="p-10">
+                  <div className="flex items-center gap-2 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                   
-                  <blockquote className="text-lg text-muted-foreground mb-6 text-iphone-body italic leading-relaxed">
-                    "{testimonial.quote}"
-                  </blockquote>
+                  <div className="mb-8">
+                    <p className="text-lg text-muted-foreground italic leading-relaxed text-body-premium">
+                      "{testimonial.quote}"
+                    </p>
+                  </div>
                   
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-premium flex items-center justify-center text-white font-bold">
+                    <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center text-white font-bold text-xl">
                       {testimonial.avatar}
                     </div>
                     <div>
-                      <div className="font-semibold text-iphone-display">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.title}</div>
+                      <div className="font-display font-bold text-lg text-gradient-hero">{testimonial.author}</div>
+                      <div className="text-muted-foreground">{testimonial.title}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -306,32 +499,24 @@ const Projects = () => {
         <div className="absolute inset-0 mesh-gradient" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <Sparkles className="h-16 w-16 mx-auto mb-6 text-gradient-premium animate-float-soft" />
-          </div>
-          
           <h2 className="text-5xl md:text-7xl font-bold mb-8 text-iphone-display">
-            Ready to Build Your
-            <span className="block text-gradient-premium">AI Future?</span>
+            Ready to Build
+            <span className="block text-gradient-premium">Your AI Project?</span>
           </h2>
           
-          <p className="text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto text-iphone-body">
-            Join thousands of companies who've transformed their operations with our AI platform. 
-            Start your journey today.
+          <p className="text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto text-iphone-body leading-relaxed">
+            Start with our no-code platform and create enterprise-grade AI solutions. 
+            Join the companies already transforming their industries with intelligent automation.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-md mx-auto">
-            <Button size="lg" className="btn-iphone text-lg px-8 py-6">
-              Start Free Trial
-              <ChevronRight className="ml-2 h-6 w-6" />
+          <div className="flex flex-col sm:flex-row gap-8 justify-center max-w-2xl mx-auto">
+            <Button size="lg" className="btn-iphone text-xl px-12 py-8 font-bold">
+              Start Building Now
+              <ArrowRight className="ml-3 h-7 w-7" />
             </Button>
-            <Button size="lg" variant="outline" className="glass-premium text-lg px-8 py-6 hover-lift-soft">
-              Book Demo
+            <Button size="lg" variant="outline" className="glass-premium text-xl px-12 py-8 hover-lift-soft font-bold">
+              Schedule Consultation
             </Button>
-          </div>
-          
-          <div className="mt-8 text-muted-foreground">
-            ✨ No credit card required • 30-day free trial • Enterprise support
           </div>
         </div>
       </section>
