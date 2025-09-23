@@ -17,8 +17,41 @@ import {
   Shield,
   Sparkles
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Services = () => {
+  const { toast } = useToast();
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  const handleGetService = (serviceName: string, price: string) => {
+    toast({
+      title: `Getting ${serviceName}`,
+      description: `Redirecting to purchase ${serviceName} for ${price}...`,
+    });
+    // In a real app, this would redirect to a checkout or contact form
+    setTimeout(() => {
+      window.location.href = `/contact?service=${encodeURIComponent(serviceName)}`;
+    }, 1500);
+  };
+
+  const handleLearnMore = (serviceName: string) => {
+    toast({
+      title: `Learning About ${serviceName}`,
+      description: "Opening detailed service information...",
+    });
+    setSelectedService(serviceName);
+  };
+
+  const handleStartFreeTrial = () => {
+    toast({
+      title: "Starting Free Trial",
+      description: "Setting up your enterprise AI trial account...",
+    });
+    setTimeout(() => {
+      window.location.href = "/contact?trial=true";
+    }, 1500);
+  };
   const aiProducts = [
     {
       title: "QuantumMind Studio",

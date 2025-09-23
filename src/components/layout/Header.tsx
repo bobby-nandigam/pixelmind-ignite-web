@@ -1,14 +1,28 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useToast } from "@/hooks/use-toast";
 import pixelmindLogo from "@/assets/pixelmind-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
+  const { toast } = useToast();
+
+  const handleGetStarted = () => {
+    toast({
+      title: "Welcome to PixelMind Labs!",
+      description: "Redirecting you to our services to get started...",
+    });
+    setTimeout(() => {
+      navigate('/services');
+      setIsMenuOpen(false);
+    }, 1000);
+  };
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -68,7 +82,10 @@ const Header = () => {
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Button className="gradient-brand text-white hover-lift">
+            <Button 
+              className="gradient-brand text-white hover-lift"
+              onClick={handleGetStarted}
+            >
               Get Started
             </Button>
           </div>
@@ -113,7 +130,10 @@ const Header = () => {
                 <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               </Button>
-              <Button className="gradient-brand text-white">
+              <Button 
+                className="gradient-brand text-white"
+                onClick={handleGetStarted}
+              >
                 Get Started
               </Button>
             </div>

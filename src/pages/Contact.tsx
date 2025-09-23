@@ -4,8 +4,83 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Calendar, ArrowRight } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    services: [] as string[],
+    budget: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields (Name, Email, Message)",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    toast({
+      title: "Message Sent Successfully!",
+      description: "We'll get back to you within 24 hours. Check your email for confirmation.",
+      variant: "default"
+    });
+    
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      services: [],
+      budget: "",
+      message: ""
+    });
+    
+    setIsSubmitting(false);
+  };
+
+  const handleServiceToggle = (service: string) => {
+    setFormData(prev => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter(s => s !== service)
+        : [...prev.services, service]
+    }));
+  };
+
+  const handleBookConsultation = () => {
+    toast({
+      title: "Booking Consultation",
+      description: "Redirecting to our calendar booking system...",
+    });
+    // In a real app, this would redirect to a calendar booking system
+    setTimeout(() => {
+      window.open("https://calendly.com/pixelmind-labs", "_blank");
+    }, 1000);
+  };
+
+  const handleSocialClick = (platform: string) => {
+    toast({
+      title: `Opening ${platform}`,
+      description: `Redirecting to our ${platform} page...`,
+    });
+  };
   const contactInfo = [
     {
       icon: Mail,
@@ -81,22 +156,43 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-2 block">Name *</label>
-                    <Input placeholder="Your full name" className="hover-glow focus:glow-brand" />
+                    <Input 
+                      placeholder="Your full name" 
+                      className="hover-glow focus:glow-brand"
+                      value={formData.name}
+                      onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium mb-2 block">Email *</label>
-                    <Input type="email" placeholder="your.email@company.com" className="hover-glow focus:glow-brand" />
+                    <Input 
+                      type="email" 
+                      placeholder="your.email@company.com" 
+                      className="hover-glow focus:glow-brand"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-2 block">Company</label>
-                    <Input placeholder="Your company name" className="hover-glow focus:glow-brand" />
+                    <Input 
+                      placeholder="Your company name" 
+                      className="hover-glow focus:glow-brand"
+                      value={formData.company}
+                      onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium mb-2 block">Phone</label>
-                    <Input placeholder="+1 (555) 123-4567" className="hover-glow focus:glow-brand" />
+                    <Input 
+                      placeholder="+91 98765 43210" 
+                      className="hover-glow focus:glow-brand"
+                      value={formData.phone}
+                      onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    />
                   </div>
                 </div>
 
@@ -104,8 +200,20 @@ const Contact = () => {
                   <label className="text-sm font-medium mb-2 block">Service Interest</label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {services.map((service, index) => (
-                      <div key={index} className="flex items-center space-x-2 p-3 border border-border rounded-lg hover:bg-muted/50 cursor-pointer transition-colors">
-                        <input type="checkbox" id={`service-${index}`} className="rounded" />
+                      <div 
+                        key={index} 
+                        className={`flex items-center space-x-2 p-3 border border-border rounded-lg hover:bg-muted/50 cursor-pointer transition-colors ${
+                          formData.services.includes(service.name) ? 'bg-primary/10 border-primary' : ''
+                        }`}
+                        onClick={() => handleServiceToggle(service.name)}
+                      >
+                        <input 
+                          type="checkbox" 
+                          id={`service-${index}`} 
+                          className="rounded"
+                          checked={formData.services.includes(service.name)}
+                          onChange={() => handleServiceToggle(service.name)}
+                        />
                         <label htmlFor={`service-${index}`} className="text-sm cursor-pointer flex-1">
                           <div className="font-medium">{service.name}</div>
                           <div className="text-xs text-muted-foreground">{service.description}</div>
@@ -118,9 +226,21 @@ const Contact = () => {
                 <div>
                   <label className="text-sm font-medium mb-2 block">Project Budget</label>
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-                    {["< $10K", "$10K - $25K", "$25K - $50K", "$50K+"].map((budget, index) => (
-                      <div key={index} className="flex items-center space-x-2 p-3 border border-border rounded-lg hover:bg-muted/50 cursor-pointer transition-colors">
-                        <input type="radio" name="budget" id={`budget-${index}`} />
+                    {["< ₹8L", "₹8L - ₹20L", "₹20L - ₹40L", "₹40L+"].map((budget, index) => (
+                      <div 
+                        key={index} 
+                        className={`flex items-center space-x-2 p-3 border border-border rounded-lg hover:bg-muted/50 cursor-pointer transition-colors ${
+                          formData.budget === budget ? 'bg-primary/10 border-primary' : ''
+                        }`}
+                        onClick={() => setFormData(prev => ({ ...prev, budget }))}
+                      >
+                        <input 
+                          type="radio" 
+                          name="budget" 
+                          id={`budget-${index}`}
+                          checked={formData.budget === budget}
+                          onChange={() => setFormData(prev => ({ ...prev, budget }))}
+                        />
                         <label htmlFor={`budget-${index}`} className="text-sm cursor-pointer">
                           {budget}
                         </label>
@@ -135,12 +255,19 @@ const Contact = () => {
                     placeholder="Tell us about your project, goals, and how we can help..."
                     rows={6}
                     className="hover-glow focus:glow-brand"
+                    value={formData.message}
+                    onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   />
                 </div>
 
-                <Button size="lg" className="w-full gradient-brand text-white hover-lift">
+                <Button 
+                  size="lg" 
+                  className="w-full gradient-brand text-white hover-lift"
+                  onClick={handleSubmit}
+                  disabled={isSubmitting}
+                >
                   <Send className="h-5 w-5 mr-2" />
-                  Send Message
+                  {isSubmitting ? "Sending Message..." : "Send Message"}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
@@ -191,7 +318,12 @@ const Contact = () => {
                   </p>
                 </div>
                 
-                <Button variant="secondary" size="sm" className="w-full hover-lift mb-4">
+                <Button 
+                  variant="secondary" 
+                  size="sm" 
+                  className="w-full hover-lift mb-4"
+                  onClick={handleBookConsultation}
+                >
                   Book Now
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -237,11 +369,20 @@ const Contact = () => {
                 </h3>
                 <div className="flex justify-center space-x-4">
                   {[
-                    { name: "LinkedIn", icon: "🔗" },
-                    { name: "Twitter", icon: "🐦" },
-                    { name: "GitHub", icon: "💻" }
+                    { name: "LinkedIn", icon: "🔗", url: "https://linkedin.com/company/pixelmind-labs" },
+                    { name: "Twitter", icon: "🐦", url: "https://twitter.com/pixelmindlabs" },
+                    { name: "GitHub", icon: "💻", url: "https://github.com/pixelmind-labs" }
                   ].map((social, index) => (
-                    <Button key={index} variant="outline" size="sm" className="hover-glow">
+                    <Button 
+                      key={index} 
+                      variant="outline" 
+                      size="sm" 
+                      className="hover-glow"
+                      onClick={() => {
+                        handleSocialClick(social.name);
+                        window.open(social.url, "_blank");
+                      }}
+                    >
                       {social.icon} {social.name}
                     </Button>
                   ))}

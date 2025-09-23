@@ -15,8 +15,40 @@ import {
   Users,
   Code2
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Tools = () => {
+  const { toast } = useToast();
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleTryTool = (toolName: string, status: string) => {
+    if (status === "Beta") {
+      toast({
+        title: `${toolName} Beta Access`,
+        description: "Requesting beta access - we'll contact you within 24 hours!",
+      });
+    } else {
+      toast({
+        title: `Starting ${toolName}`,
+        description: "Loading tool interface...",
+      });
+    }
+  };
+
+  const handleLearnMore = (toolName: string) => {
+    toast({
+      title: `Learning About ${toolName}`,
+      description: "Opening detailed tool documentation...",
+    });
+  };
+
+  const handleWatchDemo = (toolName: string) => {
+    toast({
+      title: `${toolName} Demo`,
+      description: "Loading interactive demo...",
+    });
+  };
   const aiTools = [
     {
       name: "AI Agent Builder Pro",
@@ -195,24 +227,38 @@ const Tools = () => {
                         )}
                       </div>
                       
-                      <div className="flex gap-3">
-                        {tool.status === "Live" || tool.status === "Beta" ? (
-                          <>
-                            <Button variant="outline" size="lg" className="hover-glow font-bold">
-                              <Play className="h-5 w-5 mr-2" />
-                              Try Demo
+                        <div className="flex gap-3">
+                          {tool.status === "Live" || tool.status === "Beta" ? (
+                            <>
+                              <Button 
+                                variant="outline" 
+                                size="lg" 
+                                className="hover-glow font-bold"
+                                onClick={() => handleWatchDemo(tool.name)}
+                              >
+                                <Play className="h-5 w-5 mr-2" />
+                                Try Demo
+                              </Button>
+                              <Button 
+                                size="lg" 
+                                className="gradient-brand text-white hover-lift font-bold"
+                                onClick={() => handleTryTool(tool.name, tool.status)}
+                              >
+                                Get Started
+                                <ArrowRight className="h-5 w-5 ml-2" />
+                              </Button>
+                            </>
+                          ) : (
+                            <Button 
+                              variant="outline" 
+                              size="lg" 
+                              className="hover-glow font-bold"
+                              onClick={() => handleTryTool(tool.name, tool.status)}
+                            >
+                              Join Waitlist
                             </Button>
-                            <Button size="lg" className="gradient-brand text-white hover-lift font-bold">
-                              Get Started
-                              <ArrowRight className="h-5 w-5 ml-2" />
-                            </Button>
-                          </>
-                        ) : (
-                          <Button variant="outline" size="lg" className="hover-glow font-bold">
-                            Join Waitlist
-                          </Button>
-                        )}
-                      </div>
+                          )}
+                        </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -241,11 +287,21 @@ const Tools = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            <Button size="lg" variant="secondary" className="btn-premium text-xl px-12 py-8 hover-lift font-bold">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="btn-premium text-xl px-12 py-8 hover-lift font-bold"
+              onClick={() => handleLearnMore("Enterprise Consultation")}
+            >
               Schedule Enterprise Consultation
               <ArrowRight className="ml-3 h-6 w-6" />
             </Button>
-            <Button size="lg" variant="outline" className="text-xl px-12 py-8 border-white/30 text-white hover:bg-white/20 glass-card font-bold">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-xl px-12 py-8 border-white/30 text-white hover:bg-white/20 glass-card font-bold"
+              onClick={() => handleLearnMore("Case Studies")}
+            >
               View Case Studies
             </Button>
           </div>

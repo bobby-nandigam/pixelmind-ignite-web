@@ -68,8 +68,8 @@ const Blog = () => {
       icon: Brain
     },
     {
-      title: "FinanceIQ Platform: $10B+ Managed Through Autonomous AI Trading",
-      excerpt: "Our algorithmic trading platform now manages over $10 billion in assets, delivering consistent 25% better returns than traditional methods.",
+      title: "FinanceIQ Platform: ₹84,000Cr+ Managed Through Autonomous AI Trading",
+      excerpt: "Our algorithmic trading platform now manages over ₹84,000 crores in assets, delivering consistent 25% better returns than traditional methods.",
       author: "Financial AI Team",
       date: "September 8, 2025",
       readTime: "10 min read",

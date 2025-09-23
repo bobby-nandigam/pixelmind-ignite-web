@@ -2,8 +2,74 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Database, Cloud, Code, Brain, Zap, Lock, ArrowRight } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const Integrations = () => {
+  const { toast } = useToast();
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleConfigure = (integrationName: string, status: string) => {
+    if (status === "Coming Soon") {
+      toast({
+        title: "Coming Soon!",
+        description: `${integrationName} integration is currently in development. We'll notify you when it's ready.`,
+      });
+    } else {
+      toast({
+        title: `Configuring ${integrationName}`,
+        description: "Opening integration setup wizard...",
+      });
+      // In a real app, this would open a configuration modal or redirect to setup
+    }
+  };
+
+  const handleCategoryFilter = (category: string) => {
+    setSelectedCategory(category);
+    toast({
+      title: `Filtering by ${category}`,
+      description: category === "All" ? "Showing all integrations" : `Showing ${category} integrations`,
+    });
+  };
+
+  const handleViewDocs = () => {
+    toast({
+      title: "Opening Documentation",
+      description: "Redirecting to our comprehensive API documentation...",
+    });
+    setTimeout(() => {
+      window.open("https://docs.pixelmindlabs.com", "_blank");
+    }, 1000);
+  };
+
+  const handleDownloadSDK = () => {
+    toast({
+      title: "Downloading SDK",
+      description: "Starting download of PixelMind SDK package...",
+    });
+    // In a real app, this would trigger a download
+  };
+
+  const handleRequestIntegration = () => {
+    toast({
+      title: "Integration Request",
+      description: "Redirecting to integration request form...",
+    });
+    setTimeout(() => {
+      // Navigate to contact page with integration request context
+      window.location.href = "/contact";
+    }, 1000);
+  };
+
+  const handleContactEngineering = () => {
+    toast({
+      title: "Contacting Engineering Team",
+      description: "Opening direct communication with our engineering team...",
+    });
+    setTimeout(() => {
+      window.open("mailto:engineering@pixelmindlabs.com?subject=Custom Integration Request", "_blank");
+    }, 1000);
+  };
   const integrations = [
     {
       name: "PostgreSQL",
@@ -124,7 +190,13 @@ const Integrations = () => {
             </h2>
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {categories.map((category) => (
-                <Button key={category} variant="outline" size="sm" className="hover-glow">
+                <Button 
+                  key={category} 
+                  variant={selectedCategory === category ? "default" : "outline"} 
+                  size="sm" 
+                  className="hover-glow"
+                  onClick={() => handleCategoryFilter(category)}
+                >
                   {category}
                 </Button>
               ))}
@@ -169,6 +241,7 @@ const Integrations = () => {
                       variant="outline" 
                       className="w-full hover-glow"
                       disabled={integration.status === "Coming Soon"}
+                      onClick={() => handleConfigure(integration.name, integration.status)}
                     >
                       {integration.status === "Active" ? "Configure" : "Notify Me"}
                     </Button>
@@ -257,11 +330,20 @@ console.log(query.sql);`}</code>
           </Card>
 
           <div className="text-center mt-8">
-            <Button size="lg" className="gradient-brand text-white hover-lift mr-4">
+            <Button 
+              size="lg" 
+              className="gradient-brand text-white hover-lift mr-4"
+              onClick={handleViewDocs}
+            >
               View Documentation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="hover-glow">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="hover-glow"
+              onClick={handleDownloadSDK}
+            >
               Download SDK
             </Button>
           </div>
@@ -280,11 +362,21 @@ console.log(query.sql);`}</code>
             tailored to your specific technology stack and requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 hover-lift">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="text-lg px-8 py-6 hover-lift"
+              onClick={handleRequestIntegration}
+            >
               Request Integration
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white/20 text-white hover:bg-white/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 py-6 border-white/20 text-white hover:bg-white/10"
+              onClick={handleContactEngineering}
+            >
               Contact Engineering
             </Button>
           </div>

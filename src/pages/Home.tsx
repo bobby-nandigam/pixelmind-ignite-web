@@ -2,9 +2,39 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Brain, Bot, Workflow, MessageSquare, Database, Sparkles, Users, Zap, Code2, Shield, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Home = () => {
+  const { toast } = useToast();
+
+  const handleExploreServices = () => {
+    toast({
+      title: "Exploring Our Services",
+      description: "Discover our comprehensive AI solutions...",
+    });
+  };
+
+  const handleWatchDemo = () => {
+    toast({
+      title: "Demo Coming Soon",
+      description: "Our interactive demo will be available shortly. Contact us for a live demonstration!",
+    });
+  };
+
+  const handleLearnMore = (productName: string) => {
+    toast({
+      title: `Learning About ${productName}`,
+      description: "Opening detailed product information...",
+    });
+  };
+
+  const handleTryDemo = (productName: string) => {
+    toast({
+      title: `Starting ${productName} Demo`,
+      description: "Loading interactive demo environment...",
+    });
+  };
   const aiProducts = [
     {
       name: "AI Agent Builder Pro",
@@ -176,10 +206,18 @@ const Home = () => {
                         </p>
                         
                         <div className="flex gap-3">
-                          <Button variant="secondary" className="flex-1 hover-lift font-bold">
+                          <Button 
+                            variant="secondary" 
+                            className="flex-1 hover-lift font-bold"
+                            onClick={() => handleLearnMore(product.name)}
+                          >
                             Learn More
                           </Button>
-                          <Button variant="outline" className="border-white/30 text-white hover:bg-white/20 font-bold">
+                          <Button 
+                            variant="outline" 
+                            className="border-white/30 text-white hover:bg-white/20 font-bold"
+                            onClick={() => handleTryDemo(product.name)}
+                          >
                             Try Demo
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
