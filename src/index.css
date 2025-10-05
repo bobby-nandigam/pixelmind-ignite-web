@@ -178,6 +178,20 @@
     transform-style: preserve-3d;
   }
 
+  .dark .glass-3d {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  :root .glass-3d {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  }
+
   /* Premium Shadow Effects */
   .shadow-soft {
     box-shadow: var(--shadow-soft);
@@ -223,6 +237,13 @@
   }
 
   /* Text Gradients */
+  .text-gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .text-gradient-titanium {
     background: var(--gradient-titanium);
     -webkit-background-clip: text;
@@ -281,6 +302,29 @@
 
   .hover-glow-soft:hover {
     box-shadow: var(--shadow-product);
+  }
+
+  /* 3D Hover Effects */
+  .hover-glow {
+    transition: var(--transition-premium);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .hover-lift {
+    transition: var(--transition-premium);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  /* Gradient Brand Class */
+  .gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
   }
 }
 

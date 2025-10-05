@@ -79,9 +79,9 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			backgroundImage: {
-				'gradient-brand': 'var(--brand-gradient-primary)',
-				'gradient-hero': 'var(--brand-gradient-hero)',
-				'gradient-secondary': 'var(--brand-gradient-secondary)',
+				'gradient-brand': 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-secondary': 'var(--gradient-titanium)',
 			},
 			boxShadow: {
 				'brand': 'var(--shadow-brand)',
