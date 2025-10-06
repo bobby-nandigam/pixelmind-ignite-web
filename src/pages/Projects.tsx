@@ -8,17 +8,19 @@ import {
   ArrowRight, 
   CheckCircle, 
   Users, 
-  TrendingUp, 
   Brain,
   Zap,
   Star,
   Award,
   Code2,
-  BarChart3,
   Activity,
   Sparkles,
   Target,
-  Rocket
+  Rocket,
+  TrendingUp,
+  ShieldCheck,
+  Lightbulb,
+  Clock
 } from "lucide-react";
 import ParticleBackground from "@/components/futuristic/ParticleBackground";
 
@@ -29,7 +31,7 @@ const Projects = () => {
       title: "QuantumChat Enterprise",
       description: "Revolutionary conversational AI with quantum-inspired neural architecture. Processes complex multi-turn conversations with human-level understanding and emotional intelligence.",
       image: chatmindPreview,
-      category: "Advanced Conversational AI",
+      category: "Conversational AI",
       tags: ["Quantum NLP", "Emotional AI", "Multi-Agent"],
       status: "Live Production",
       complexity: "Enterprise Scale",
@@ -37,30 +39,25 @@ const Projects = () => {
       features: [
         "Quantum-enhanced language understanding across 100+ languages",
         "Advanced emotional intelligence with micro-expression analysis",
-        "Multi-agent conversation orchestration",
+        "Multi-agent conversation orchestration with seamless handoffs",
         "Real-time learning and personality adaptation",
         "Cross-platform voice, text, and video integration",
         "Enterprise-grade security with end-to-end encryption"
       ],
-      results: [
-        { metric: "600%", label: "Improvement in conversation quality" },
-        { metric: "95%", label: "Reduction in escalation to humans" },
-        { metric: "99.9%", label: "Uptime with sub-100ms response" },
-        { metric: "1B+", label: "Conversations processed" }
+      metrics: [
+        { value: "600%", label: "Quality Improvement" },
+        { value: "95%", label: "Automation Rate" },
+        { value: "99.9%", label: "Uptime SLA" },
+        { value: "1B+", label: "Conversations" }
       ],
-      implementation: [
-        "Zero-code conversation designer",
-        "Automated training pipeline",
-        "One-click deployment to any platform",
-        "Real-time performance optimization"
-      ]
+      gradient: "from-blue-600 to-cyan-600"
     },
     {
       id: 2,
       title: "VisionMind Pro",
       description: "Next-generation computer vision platform with 3D scene understanding and real-time object manipulation. Processes millions of images with human-level accuracy.",
       image: mediassistPreview,
-      category: "Advanced Computer Vision",
+      category: "Computer Vision",
       tags: ["3D Vision", "Real-time Processing", "Edge AI"],
       status: "Live Production",
       complexity: "High Performance",
@@ -73,25 +70,20 @@ const Projects = () => {
         "Edge device optimization for mobile and IoT",
         "API-first architecture with sub-10ms inference"
       ],
-      results: [
-        { metric: "10x", label: "Faster processing speed" },
-        { metric: "99.7%", label: "Accuracy on complex tasks" },
-        { metric: "Real-time", label: "Processing on mobile devices" },
-        { metric: "50M+", label: "Images processed daily" }
+      metrics: [
+        { value: "10x", label: "Processing Speed" },
+        { value: "99.7%", label: "Accuracy Rate" },
+        { value: "Real-time", label: "Mobile Processing" },
+        { value: "50M+", label: "Daily Images" }
       ],
-      implementation: [
-        "Drag-and-drop model builder",
-        "Automated dataset optimization",
-        "Real-time deployment pipeline",
-        "Performance monitoring dashboard"
-      ]
+      gradient: "from-purple-600 to-pink-600"
     },
     {
       id: 3,
       title: "DataGenius Analytics",
       description: "Autonomous data intelligence platform that discovers patterns, predicts trends, and generates actionable insights without human intervention using advanced AutoML.",
       image: dataqueryPreview,
-      category: "Predictive Analytics AI",
+      category: "Predictive Analytics",
       tags: ["AutoML", "Predictive Modeling", "Time Series"],
       status: "Live Production", 
       complexity: "Enterprise Scale",
@@ -104,18 +96,13 @@ const Projects = () => {
         "Multi-modal data fusion (text, images, numerical)",
         "Automated report generation and insight discovery"
       ],
-      results: [
-        { metric: "300%", label: "Improvement in forecast accuracy" },
-        { metric: "80%", label: "Reduction in time-to-insight" },
-        { metric: "95%", label: "Automated anomaly detection" },
-        { metric: "10TB+", label: "Data processed daily" }
+      metrics: [
+        { value: "300%", label: "Forecast Accuracy" },
+        { value: "80%", label: "Time Savings" },
+        { value: "95%", label: "Anomaly Detection" },
+        { value: "10TB+", label: "Daily Processing" }
       ],
-      implementation: [
-        "No-code pipeline builder",
-        "Automated model selection",
-        "Real-time data processing",
-        "Custom dashboard creation"
-      ]
+      gradient: "from-emerald-600 to-teal-600"
     },
     {
       id: 4,
@@ -135,18 +122,13 @@ const Projects = () => {
         "Task planning and execution coordination",
         "Real-time monitoring and performance optimization"
       ],
-      results: [
-        { metric: "500%", label: "Improvement in problem solving" },
-        { metric: "90%", label: "Autonomous business processes" },
-        { metric: "24/7", label: "Operation with continuous learning" },
-        { metric: "1000+", label: "Agents coordinated simultaneously" }
+      metrics: [
+        { value: "500%", label: "Problem Solving" },
+        { value: "90%", label: "Automation Rate" },
+        { value: "24/7", label: "Operation" },
+        { value: "1000+", label: "Active Agents" }
       ],
-      implementation: [
-        "Visual agent behavior designer", 
-        "Automated task distribution",
-        "Real-time coordination dashboard",
-        "Performance analytics and optimization"
-      ]
+      gradient: "from-orange-600 to-red-600"
     },
     {
       id: 5,
@@ -166,18 +148,13 @@ const Projects = () => {
         "Multi-modal medical data integration",
         "HIPAA-compliant processing and storage"
       ],
-      results: [
-        { metric: "95%", label: "Accuracy in diagnostic imaging" },
-        { metric: "60%", label: "Reduction in diagnosis time" },
-        { metric: "98%", label: "Early condition detection rate" },
-        { metric: "100K+", label: "Medical records processed daily" }
+      metrics: [
+        { value: "95%", label: "Diagnostic Accuracy" },
+        { value: "60%", label: "Time Reduction" },
+        { value: "98%", label: "Early Detection" },
+        { value: "100K+", label: "Daily Records" }
       ],
-      implementation: [
-        "Medical workflow integration",
-        "Automated report generation",
-        "Real-time alert systems",
-        "Clinical decision support"
-      ]
+      gradient: "from-rose-600 to-pink-600"
     },
     {
       id: 6,
@@ -197,18 +174,13 @@ const Projects = () => {
         "Regulatory compliance and audit trail",
         "Custom financial model building and backtesting"
       ],
-      results: [
-        { metric: "25%", label: "Better returns vs traditional" },
-        { metric: "99.9%", label: "Uptime for HFT operations" },
-        { metric: "1M+", label: "Market events per second" },
-        { metric: "40%", label: "Risk reduction achieved" }
+      metrics: [
+        { value: "25%", label: "Better Returns" },
+        { value: "99.9%", label: "HFT Uptime" },
+        { value: "1M+", label: "Events/Second" },
+        { value: "40%", label: "Risk Reduction" }
       ],
-      implementation: [
-        "No-code strategy builder",
-        "Automated backtesting engine",
-        "Real-time deployment system",
-        "Performance tracking dashboard"
-      ]
+      gradient: "from-indigo-600 to-purple-600"
     }
   ];
 
@@ -217,25 +189,29 @@ const Projects = () => {
       icon: Award, 
       metric: "2M+", 
       label: "AI Models Deployed",
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-600 to-cyan-500",
+      bgColor: "bg-blue-50 dark:bg-blue-950/30"
     },
     { 
       icon: Users, 
       metric: "50K+", 
       label: "Enterprise Clients",
-      gradient: "from-emerald-500 to-teal-500"
+      gradient: "from-emerald-600 to-teal-500",
+      bgColor: "bg-emerald-50 dark:bg-emerald-950/30"
     },
     { 
       icon: Star, 
       metric: "99.2%", 
       label: "Success Rate",
-      gradient: "from-orange-500 to-amber-500"
+      gradient: "from-orange-600 to-amber-500",
+      bgColor: "bg-orange-50 dark:bg-orange-950/30"
     },
     { 
       icon: Zap, 
       metric: "100M+", 
       label: "Processes Automated",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-600 to-pink-500",
+      bgColor: "bg-purple-50 dark:bg-purple-950/30"
     }
   ];
 
@@ -243,61 +219,67 @@ const Projects = () => {
     {
       quote: "QuantumChat Enterprise revolutionized our customer service. The emotional intelligence is phenomenal - it handles complex queries better than our human agents.",
       author: "Rahul Sharma",
-      title: "CTO, TechVision India",
-      avatar: "R"
+      title: "CTO",
+      company: "TechVision India",
+      avatar: "R",
+      gradient: "from-blue-600 to-cyan-600"
     },
     {
       quote: "VisionMind Pro processes our factory's visual inspection 100x faster with 99.7% accuracy. The real-time 3D understanding is game-changing.",
       author: "Priya Patel",
-      title: "Head of Operations, Manufacturing Co",
-      avatar: "P"
+      title: "Head of Operations",
+      company: "Manufacturing Co",
+      avatar: "P",
+      gradient: "from-purple-600 to-pink-600"
     },
     {
       quote: "AgentSwarm Platform manages our entire supply chain autonomously. 1000+ AI agents working together seamlessly - it's like science fiction come to life.",
       author: "Amit Kumar",
-      title: "CEO, Global Logistics",
-      avatar: "A"
+      title: "CEO",
+      company: "Global Logistics",
+      avatar: "A",
+      gradient: "from-emerald-600 to-teal-600"
     }
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 bg-background">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <ParticleBackground />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
-            <Badge className="glass-3d px-8 py-3 text-lg font-semibold hover-glow">
-              <Activity className="w-5 h-5 mr-2" />
+            <Badge className="inline-flex items-center gap-2 px-6 py-3 text-base font-semibold bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-all">
+              <Activity className="w-5 h-5" />
               Live AI Projects
             </Badge>
             
-            <h1 className="text-7xl md:text-9xl font-bold tracking-tight">
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
               Enterprise AI
-              <span className="block text-gradient-brand mt-2">In Action</span>
+              <span className="block text-gradient-brand mt-4">In Action</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
               Explore real-world implementations of our AI platforms. From quantum-enhanced conversations 
               to autonomous multi-agent systems - see how enterprises are transforming with our technology.
             </p>
 
-            {/* Achievement Stats */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto pt-12">
+            {/* Achievement Stats - Enhanced Visibility */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto pt-16">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
-                  <Card key={index} className="glass-3d p-8 hover-lift border-0 shadow-3d">
-                    <CardContent className="p-0 text-center space-y-4">
-                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${achievement.gradient}`}>
+                  <Card key={index} className={`${achievement.bgColor} border-2 border-border/50 hover:border-primary/30 transition-all hover:scale-105 shadow-lg`}>
+                    <CardContent className="p-8 text-center space-y-4">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${achievement.gradient} shadow-lg`}>
                         <Icon className="h-8 w-8 text-white" />
                       </div>
-                      <div className="text-4xl font-bold text-gradient-brand">
+                      <div className={`text-5xl font-bold bg-gradient-to-br ${achievement.gradient} bg-clip-text text-transparent`}>
                         {achievement.metric}
                       </div>
-                      <div className="text-sm text-muted-foreground font-medium">
+                      <div className="text-sm font-semibold text-foreground/80">
                         {achievement.label}
                       </div>
                     </CardContent>
@@ -310,104 +292,117 @@ const Projects = () => {
       </section>
 
       {/* Projects Showcase */}
-      <section className="py-32 relative">
+      <section className="py-24 relative bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-32">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Featured <span className="text-gradient-brand">Projects</span>
+            </h2>
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Discover how leading enterprises leverage our AI solutions
+            </p>
+          </div>
+
+          <div className="space-y-24">
             {projects.map((project, index) => {
               const isEven = index % 2 === 0;
               
               return (
-                <Card key={project.id} className="glass-3d overflow-hidden border-0 shadow-3d hover-lift">
-                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
-                    {/* Project Visual */}
-                    <div className={`relative p-12 lg:p-16 ${!isEven ? 'lg:col-start-2' : ''}`}>
-                      <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-3d hover-lift">
+                <Card key={project.id} className="overflow-hidden border-2 hover:border-primary/30 transition-all shadow-xl hover:shadow-2xl bg-card">
+                  <div className={`grid grid-cols-1 lg:grid-cols-5 gap-0 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                    {/* Project Visual - 2 columns */}
+                    <div className={`lg:col-span-2 relative ${!isEven ? 'lg:col-start-4' : ''}`}>
+                      <div className="relative h-full min-h-[500px] overflow-hidden group">
                         <img 
                           src={project.image} 
                           alt={project.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                         
-                        <Badge className="absolute top-6 left-6 glass-3d text-white border-white/20">
-                          <Activity className="w-4 h-4 mr-2" />
-                          {project.status}
-                        </Badge>
+                        <div className="absolute top-6 left-6 right-6 flex items-start justify-between">
+                          <Badge className="bg-primary text-primary-foreground border-0 font-semibold px-4 py-2">
+                            <Activity className="w-4 h-4 mr-2" />
+                            {project.status}
+                          </Badge>
+                          <Badge className="bg-secondary text-secondary-foreground border-0 font-semibold px-4 py-2">
+                            {project.complexity}
+                          </Badge>
+                        </div>
                         
                         <div className="absolute bottom-6 left-6 right-6 text-white space-y-4">
+                          <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 font-semibold mb-2">
+                            {project.category}
+                          </Badge>
+                          <h3 className="text-3xl font-bold">{project.title}</h3>
                           <div className="flex flex-wrap gap-2">
                             {project.tags.map((tag, tIndex) => (
-                              <Badge key={tIndex} className="glass-3d text-white border-white/20">
+                              <Badge key={tIndex} className="bg-white/10 backdrop-blur-sm text-white border-white/20 text-xs">
                                 {tag}
                               </Badge>
                             ))}
                           </div>
-                          <h3 className="text-3xl font-bold">{project.title}</h3>
                         </div>
                       </div>
                     </div>
 
-                    {/* Project Details */}
-                    <div className={`p-12 lg:p-16 flex flex-col justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    {/* Project Details - 3 columns */}
+                    <div className={`lg:col-span-3 p-10 lg:p-12 flex flex-col justify-center ${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                       <div className="space-y-8">
                         <div>
-                          <Badge className="glass-3d mb-4">
-                            {project.category}
-                          </Badge>
-                          <h3 className="text-4xl font-bold mb-4">
+                          <h3 className="text-4xl font-bold mb-4 text-foreground">
                             {project.title}
                           </h3>
-                          <p className="text-xl text-muted-foreground leading-relaxed">
+                          <p className="text-lg text-foreground/70 leading-relaxed">
                             {project.description}
                           </p>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4">
-                          <Card className="glass-3d p-4 border-0">
-                            <div className="text-sm text-muted-foreground mb-1">Status</div>
-                            <div className="font-semibold">{project.status}</div>
-                          </Card>
-                          <Card className="glass-3d p-4 border-0">
-                            <div className="text-sm text-muted-foreground mb-1">Complexity</div>
-                            <div className="font-semibold">{project.complexity}</div>
-                          </Card>
-                          <Card className="glass-3d p-4 border-0">
-                            <div className="text-sm text-muted-foreground mb-1">Category</div>
-                            <div className="font-semibold text-xs">{project.category.split(' ')[0]}</div>
-                          </Card>
-                        </div>
-
+                        {/* Technology Stack */}
                         <div>
-                          <h4 className="text-2xl font-semibold mb-4 text-gradient-brand">Technology Stack</h4>
-                          <div className="flex flex-wrap gap-3 mb-6">
+                          <h4 className="text-lg font-bold mb-4 flex items-center gap-2 text-foreground">
+                            <Code2 className="w-5 h-5 text-primary" />
+                            Technology Stack
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
                             {project.technology.map((tech, tIndex) => (
-                              <Badge key={tIndex} className="glass-3d px-4 py-2">
+                              <Badge key={tIndex} className="bg-primary/10 text-primary border-primary/20 font-medium px-3 py-1">
                                 {tech}
                               </Badge>
                             ))}
                           </div>
-                          
-                          <h4 className="text-2xl font-semibold mb-4 text-gradient-brand">Advanced Features</h4>
+                        </div>
+                        
+                        {/* Key Features */}
+                        <div>
+                          <h4 className="text-lg font-bold mb-4 flex items-center gap-2 text-foreground">
+                            <Sparkles className="w-5 h-5 text-primary" />
+                            Key Features
+                          </h4>
                           <div className="grid grid-cols-1 gap-3">
                             {project.features.slice(0, 4).map((feature, fIndex) => (
-                              <div key={fIndex} className="flex items-start gap-3 p-3 rounded-xl glass-3d hover-lift">
-                                <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                                <span className="text-sm">{feature}</span>
+                              <div key={fIndex} className="flex items-start gap-3 p-3 rounded-xl bg-muted/50 hover:bg-muted transition-colors">
+                                <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                                <span className="text-sm font-medium text-foreground/90">{feature}</span>
                               </div>
                             ))}
                           </div>
                         </div>
 
-                        <div className="glass-3d p-6 rounded-2xl">
-                          <h4 className="text-xl font-semibold mb-4 text-gradient-brand">Key Results</h4>
+                        {/* Performance Metrics */}
+                        <div className="bg-gradient-to-br from-muted/50 to-muted/30 p-6 rounded-2xl border border-border/50">
+                          <h4 className="text-lg font-bold mb-4 flex items-center gap-2 text-foreground">
+                            <TrendingUp className="w-5 h-5 text-primary" />
+                            Performance Metrics
+                          </h4>
                           <div className="grid grid-cols-2 gap-4">
-                            {project.results.map((result, rIndex) => (
-                              <div key={rIndex} className="text-center">
-                                <div className="text-3xl font-bold text-gradient-brand mb-1">
-                                  {result.metric}
+                            {project.metrics.map((metric, mIndex) => (
+                              <div key={mIndex} className="text-center p-4 bg-background/80 rounded-xl border border-border/30">
+                                <div className={`text-3xl font-bold bg-gradient-to-br ${project.gradient} bg-clip-text text-transparent mb-1`}>
+                                  {metric.value}
                                 </div>
-                                <div className="text-xs text-muted-foreground">
-                                  {result.label}
+                                <div className="text-xs font-semibold text-foreground/70">
+                                  {metric.label}
                                 </div>
                               </div>
                             ))}
@@ -417,7 +412,7 @@ const Projects = () => {
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                           <Button 
                             size="lg" 
-                            className="glass-3d hover-lift flex-1"
+                            className={`flex-1 bg-gradient-to-r ${project.gradient} hover:opacity-90 text-white font-semibold shadow-lg hover:shadow-xl transition-all`}
                           >
                             View Case Study
                             <ArrowRight className="ml-2 h-5 w-5" />
@@ -425,9 +420,9 @@ const Projects = () => {
                           <Button 
                             size="lg" 
                             variant="outline" 
-                            className="glass-3d hover-glow flex-1"
+                            className="flex-1 border-2 font-semibold hover:bg-muted"
                           >
-                            <Code2 className="mr-2 h-5 w-5" />
+                            <Lightbulb className="mr-2 h-5 w-5" />
                             Learn More
                           </Button>
                         </div>
@@ -442,39 +437,38 @@ const Projects = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient-brand">
-              Client Success Stories
+      <section className="py-24 relative bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Client <span className="text-gradient-brand">Success Stories</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               Hear from leaders who transformed their businesses with our AI platforms
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glass-3d p-8 hover-lift border-0 shadow-3d">
-                <CardContent className="p-0 space-y-6">
+              <Card key={index} className="border-2 hover:border-primary/30 transition-all shadow-lg hover:shadow-xl bg-card">
+                <CardContent className="p-8 space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-brand flex items-center justify-center text-white text-2xl font-bold">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
                       {testimonial.avatar}
                     </div>
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
                   </div>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-lg leading-relaxed text-foreground/80 italic">
                     "{testimonial.quote}"
                   </p>
-                  <div className="pt-4 border-t border-border/50">
-                    <div className="font-semibold text-lg">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.title}</div>
+                  <div className="pt-4 border-t border-border">
+                    <div className="font-bold text-lg text-foreground">{testimonial.author}</div>
+                    <div className="text-sm text-foreground/70 font-medium">{testimonial.title}</div>
+                    <div className="text-sm text-foreground/60">{testimonial.company}</div>
                   </div>
                 </CardContent>
               </Card>
@@ -484,22 +478,22 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 relative">
+      <section className="py-24 relative bg-muted/30">
         <ParticleBackground />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-muted/50 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-muted/80 to-background/90" />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl md:text-7xl font-bold mb-8">
             Start Your
-            <span className="block text-gradient-brand mt-2">AI Project Today</span>
+            <span className="block text-gradient-brand mt-4">AI Project Today</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
             Join thousands of enterprises transforming their operations with our cutting-edge AI platforms.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
               size="lg" 
-              className="glass-3d hover-lift text-lg px-12 py-7"
+              className="bg-gradient-to-r from-primary to-primary/80 hover:opacity-90 text-primary-foreground font-semibold text-lg px-12 py-7 shadow-xl hover:shadow-2xl transition-all"
             >
               <Rocket className="mr-2 h-6 w-6" />
               Get Started
@@ -507,7 +501,7 @@ const Projects = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="glass-3d hover-glow text-lg px-12 py-7"
+              className="border-2 font-semibold text-lg px-12 py-7 hover:bg-muted"
             >
               <Target className="mr-2 h-5 w-5" />
               Schedule Demo
