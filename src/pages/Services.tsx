@@ -15,7 +15,10 @@ import {
   BarChart3,
   Sparkles,
   Rocket,
-  Star
+  Star,
+  Shield,
+  TrendingUp,
+  Award
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
@@ -73,12 +76,6 @@ const Services = () => {
         "One-click cloud deployment with auto-scaling",
         "Real-time monitoring with performance optimization"
       ],
-      deliverables: [
-        "Custom Neural Networks",
-        "Cloud Training Pipeline",
-        "Mobile/Edge SDKs",
-        "Enterprise Support"
-      ],
       pricing: "₹15,999/month",
       users: "Unlimited Models",
       gradient: "from-violet-600 via-purple-600 to-indigo-800",
@@ -102,12 +99,6 @@ const Services = () => {
         "Behavior scripting using natural language instructions",
         "Real-time monitoring with adaptive optimization",
         "Automated decision tree generation and learning"
-      ],
-      deliverables: [
-        "Intelligent Workflow System",
-        "Multi-Agent Platform",
-        "Decision Analytics",
-        "Custom Integration APIs"
       ],
       pricing: "₹22,999/month",
       users: "Unlimited Workflows",
@@ -133,12 +124,6 @@ const Services = () => {
         "Real-time inference with sub-100ms latency",
         "Mobile deployment with model compression"
       ],
-      deliverables: [
-        "Computer Vision Platform",
-        "Custom Detection Models",
-        "Mobile & Web SDKs",
-        "Cloud Infrastructure"
-      ],
       pricing: "₹18,999/month",
       users: "Unlimited Processing",
       gradient: "from-orange-500 via-red-500 to-pink-600",
@@ -162,12 +147,6 @@ const Services = () => {
         "Emotional intelligence training with sentiment analysis",
         "Multi-channel deployment across platforms",
         "Real-time learning with conversation analytics"
-      ],
-      deliverables: [
-        "Conversational AI Platform",
-        "Multi-Channel Integration",
-        "Analytics & Insights",
-        "Voice Capabilities"
       ],
       pricing: "₹11,999/month",
       users: "1M Conversations",
@@ -193,12 +172,6 @@ const Services = () => {
         "Real-time deployment with streaming data processing",
         "Custom dashboards with interactive visualizations"
       ],
-      deliverables: [
-        "Predictive Analytics Platform",
-        "Custom ML Models",
-        "Real-time Dashboards",
-        "Data Pipeline"
-      ],
       pricing: "₹19,999/month",
       users: "Unlimited Data Sources",
       gradient: "from-cyan-500 via-blue-600 to-indigo-700",
@@ -222,12 +195,6 @@ const Services = () => {
         "Task distribution algorithms with load balancing",
         "Communication interfaces with protocol management",
         "Performance optimization with continuous learning"
-      ],
-      deliverables: [
-        "Multi-Agent Platform",
-        "Custom Agent Networks",
-        "Coordination System",
-        "Enterprise Integration"
       ],
       pricing: "₹25,999/month",
       users: "Unlimited Agents",
@@ -268,130 +235,153 @@ const Services = () => {
       quote: "We built 5 AI agents for different departments using AgentForge in just 3 weeks. The multi-agent coordination is phenomenal - our efficiency increased by 600%.",
       author: "Rajesh Kumar",
       title: "CTO",
-      company: "TechCorp Industries, Hyderabad"
+      company: "TechCorp Industries"
     },
     {
       quote: "QuantumMind Studio transformed our R&D. We're now creating neural architectures that would have taken months in just days, with performance that exceeds expectations.",
       author: "Priya Sharma",
       title: "Head of AI",
-      company: "Global Dynamics Ltd, Delhi"
+      company: "Global Dynamics Ltd"
     },
     {
       quote: "DataMind Intelligence revolutionized our analytics. We process 10TB+ data in real-time with predictive models that continuously improve themselves.",
       author: "Amit Patel",
       title: "Data Science Director",
-      company: "FinTech Solutions, Mumbai"
+      company: "FinTech Solutions"
     }
   ];
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+    <div className="min-h-screen pt-16 bg-background">
+      {/* Stunning Hero Section */}
+      <section className="relative pt-32 pb-32 overflow-hidden">
         <ParticleBackground />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-secondary/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--secondary)/0.15),transparent_50%)]" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <Badge className="glass-3d px-8 py-3 text-lg font-semibold hover-glow">
+          <div className="text-center space-y-10 animate-fade-in">
+            <Badge className="glass-3d px-8 py-3 text-base font-semibold border-primary/20 shadow-lg hover-lift">
               <Sparkles className="w-5 h-5 mr-2" />
-              No-Code AI Platform
+              Enterprise No-Code AI Platform
             </Badge>
             
-            <h1 className="text-7xl md:text-9xl font-bold tracking-tight">
-              Build AI Models
-              <span className="block text-gradient-brand mt-2">Without Code</span>
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-none">
+              Build AI Solutions
+              <span className="block text-gradient-brand mt-4">Without Code</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Empower everyone in your organization to create sophisticated AI solutions. 
-              Our visual platform makes advanced AI accessible to teams of all technical levels.
+            <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-5xl mx-auto leading-relaxed font-light">
+              Empower your entire organization to create sophisticated AI solutions. 
+              Our visual platform makes advanced AI accessible to everyone.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-10">
               <Button 
                 size="lg" 
-                className="glass-3d hover-lift text-lg px-10 py-7 group"
+                className="glass-3d hover-lift text-lg px-12 py-8 group shadow-xl border-primary/20 bg-gradient-to-r from-primary to-secondary text-primary-foreground"
                 onClick={handleStartFreeTrial}
               >
                 Start Building Free
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="glass-3d text-lg px-10 py-7 hover-glow"
+                className="glass-3d text-lg px-12 py-8 hover-glow border-2 shadow-xl hover:border-primary/50 transition-all duration-300"
               >
-                <Rocket className="mr-2 h-5 w-5" />
-                Watch Demo
+                <Rocket className="mr-3 h-6 w-6" />
+                Watch Live Demo
               </Button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="pt-16 flex flex-wrap justify-center gap-8 items-center text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5 text-primary" />
+                <span>Enterprise Security</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-primary" />
+                <span>99.9% Uptime SLA</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="w-5 h-5 text-primary" />
+                <span>ISO 27001 Certified</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products Showcase */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient-brand">
+      {/* Products Showcase - Premium Layout */}
+      <section className="py-32 relative bg-gradient-to-b from-muted/20 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 space-y-6">
+            <Badge className="glass-3d px-6 py-2 border-primary/20">
+              <Star className="w-4 h-4 mr-2" />
+              Premium AI Products
+            </Badge>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gradient-brand">
               AI Products & Services
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Choose from our suite of enterprise-grade AI platforms
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto">
+              Choose from our suite of enterprise-grade AI platforms designed for scale
             </p>
           </div>
 
-          <div className="space-y-32">
+          <div className="space-y-24">
             {aiProducts.map((product, index) => {
               const Icon = product.icon;
               const isEven = index % 2 === 0;
               
               return (
-                <Card key={index} className="glass-3d overflow-hidden border-0 shadow-3d hover-lift">
+                <Card 
+                  key={index} 
+                  className="glass-3d overflow-hidden border border-border/50 shadow-2xl hover-lift group transition-all duration-500"
+                >
                   {product.highlight && (
-                    <div className="absolute top-6 right-6 z-20">
-                      <Badge className="glass-3d px-4 py-2 text-sm font-semibold hover-glow">
-                        <Star className="w-4 h-4 mr-1" />
+                    <div className="absolute top-8 right-8 z-20">
+                      <Badge className="glass-3d px-5 py-2.5 text-sm font-bold border-primary/30 shadow-lg bg-gradient-to-r from-primary/20 to-secondary/20">
+                        <Star className="w-4 h-4 mr-2 text-primary" />
                         {product.highlight}
                       </Badge>
                     </div>
                   )}
                   
-                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                  <div className={`grid grid-cols-1 lg:grid-cols-2 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
                     {/* Product Visual */}
-                    <div className={`relative p-12 lg:p-16 ${!isEven ? 'lg:col-start-2' : ''}`}>
-                      <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-3d hover-lift">
-                        <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient}`} />
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
+                    <div className={`relative p-8 lg:p-12 ${!isEven ? 'lg:col-start-2' : ''}`}>
+                      <div className="relative h-[450px] lg:h-[550px] rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 hover-lift">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-90`} />
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
                         
-                        <div className="relative z-10 h-full flex flex-col justify-between p-8 text-white">
+                        <div className="relative z-10 h-full flex flex-col justify-between p-10 text-white">
                           <div className="flex items-start justify-between">
-                            <div className="glass-3d p-5 rounded-2xl">
-                              <Icon className="h-12 w-12" />
+                            <div className="glass-3d p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl">
+                              <Icon className="h-14 w-14" />
                             </div>
                           </div>
 
-                          <div className="space-y-6">
+                          <div className="space-y-8">
                             <div>
-                              <h3 className="text-4xl font-bold mb-2">
+                              <h3 className="text-4xl lg:text-5xl font-bold mb-3 drop-shadow-lg">
                                 {product.title}
                               </h3>
-                              <p className="text-lg opacity-90">
+                              <p className="text-xl opacity-95 drop-shadow">
                                 {product.subtitle}
                               </p>
                             </div>
                             
                             <div className="grid grid-cols-2 gap-4">
-                              <div className="glass-3d p-5 rounded-xl">
-                                <div className="text-3xl font-bold">{product.pricing}</div>
-                                <div className="text-sm opacity-70">per month</div>
+                              <div className="glass-3d p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl">
+                                <div className="text-4xl font-bold mb-1">{product.pricing}</div>
+                                <div className="text-sm opacity-80">per month</div>
                               </div>
-                              <div className="glass-3d p-5 rounded-xl">
-                                <div className="text-xl font-bold">{product.users}</div>
-                                <div className="text-sm opacity-70">included</div>
+                              <div className="glass-3d p-6 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl">
+                                <div className="text-2xl font-bold mb-1">{product.users}</div>
+                                <div className="text-sm opacity-80">included</div>
                               </div>
                             </div>
                           </div>
@@ -400,56 +390,65 @@ const Services = () => {
                     </div>
 
                     {/* Product Details */}
-                    <div className={`p-12 lg:p-16 flex flex-col justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className={`p-8 lg:p-12 flex flex-col justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
                       <div className="space-y-8">
                         <div>
-                          <h3 className="text-4xl font-bold mb-4">
+                          <h3 className="text-3xl lg:text-4xl font-bold mb-5">
                             {product.title}
                           </h3>
-                          <p className="text-xl text-muted-foreground leading-relaxed">
+                          <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
                             {product.description}
                           </p>
                         </div>
 
                         <div>
-                          <h4 className="text-2xl font-semibold mb-6 text-gradient-brand">Platform Features</h4>
-                          <div className="grid grid-cols-1 gap-3">
+                          <h4 className="text-2xl font-bold mb-6 text-gradient-brand flex items-center gap-2">
+                            <Sparkles className="w-6 h-6" />
+                            Platform Features
+                          </h4>
+                          <div className="grid gap-3">
                             {product.features.map((feature, fIndex) => (
-                              <div key={fIndex} className="flex items-center gap-4 p-4 rounded-xl glass-3d hover-lift">
-                                <CheckCircle className="h-5 w-5 text-emerald-500 flex-shrink-0" />
-                                <span className="font-medium">{feature}</span>
+                              <div 
+                                key={fIndex} 
+                                className="flex items-center gap-4 p-5 rounded-xl glass-3d hover-lift border border-border/30 transition-all duration-300 hover:border-primary/30"
+                              >
+                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                                  <CheckCircle className="h-5 w-5 text-white" />
+                                </div>
+                                <span className="font-medium text-base">{feature}</span>
                               </div>
                             ))}
                           </div>
                         </div>
 
-                        <div className="glass-3d p-8 rounded-2xl space-y-4">
-                          <h4 className="text-xl font-semibold text-gradient-brand">
+                        <div className="glass-3d p-8 rounded-2xl space-y-5 border border-border/30 bg-gradient-to-br from-muted/30 to-transparent">
+                          <h4 className="text-xl font-bold text-gradient-brand flex items-center gap-2">
+                            <Zap className="w-5 h-5" />
                             How It Works
                           </h4>
                           {product.implementation.map((impl, iIndex) => (
                             <div key={iIndex} className="flex items-start gap-4">
-                              <div className="w-7 h-7 rounded-full bg-gradient-brand flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-sm font-bold shadow-lg">
                                 {iIndex + 1}
                               </div>
-                              <span className="text-muted-foreground">{impl}</span>
+                              <span className="text-muted-foreground pt-0.5">{impl}</span>
                             </div>
                           ))}
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                        <div className="flex flex-col sm:flex-row gap-4 pt-6">
                           <Button 
-                            size="lg" 
-                            className="glass-3d hover-lift flex-1"
+                            size="lg"
+                            className="glass-3d hover-lift px-8 py-6 text-base font-semibold group shadow-lg bg-gradient-to-r from-primary to-secondary border-0"
                             onClick={() => handleGetService(product.title, product.pricing)}
                           >
-                            Get Started
-                            <ArrowRight className="ml-2 h-5 w-5" />
+                            Get Started Now
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                           </Button>
                           <Button 
-                            size="lg" 
-                            variant="outline" 
-                            className="glass-3d hover-glow flex-1"
+                            size="lg"
+                            variant="outline"
+                            className="glass-3d px-8 py-6 text-base font-semibold border-2 hover:border-primary/50 transition-all duration-300"
                             onClick={() => handleLearnMore(product.title)}
                           >
                             Learn More
@@ -466,38 +465,43 @@ const Services = () => {
       </section>
 
       {/* Building Process */}
-      <section className="py-32 relative">
+      <section className="py-32 relative bg-gradient-to-b from-background to-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient-brand">
-              Building Process
+          <div className="text-center mb-20 space-y-6">
+            <Badge className="glass-3d px-6 py-2 border-primary/20">
+              <Rocket className="w-4 h-4 mr-2" />
+              Simple Process
+            </Badge>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gradient-brand">
+              How It Works
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From concept to deployment in 4 simple steps
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              From concept to deployment in four simple steps
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {buildingSteps.map((step) => {
-              const Icon = step.icon;
+              const StepIcon = step.icon;
               return (
-                <Card key={step.step} className="glass-3d p-8 hover-lift border-0 shadow-3d">
-                  <CardContent className="p-0 space-y-6">
-                    <div className="flex items-center justify-between">
-                      <div className="glass-3d p-4 rounded-2xl">
-                        <Icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <div className="text-6xl font-bold text-gradient-brand opacity-20">
-                        {step.step}
-                      </div>
+                <Card 
+                  key={step.step}
+                  className="glass-3d hover-lift p-8 text-center border border-border/50 shadow-xl group transition-all duration-500"
+                >
+                  <div className="mb-6 flex justify-center">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                      <StepIcon className="w-10 h-10 text-white" />
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
-                  </CardContent>
+                  </div>
+                  <div className="mb-4">
+                    <Badge className="glass-3d text-lg px-4 py-2 border-primary/20">
+                      Step {step.step}
+                    </Badge>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
+                  <p className="text-muted-foreground text-base leading-relaxed">
+                    {step.description}
+                  </p>
                 </Card>
               );
             })}
@@ -506,73 +510,72 @@ const Services = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gradient-brand">
+      <section className="py-32 relative bg-gradient-to-b from-muted/20 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 space-y-6">
+            <Badge className="glass-3d px-6 py-2 border-primary/20">
+              <Star className="w-4 h-4 mr-2" />
               Success Stories
+            </Badge>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gradient-brand">
+              Trusted by Leaders
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              See how leading companies are transforming with our AI platforms
+            <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              See how enterprises transform with our AI platform
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glass-3d p-8 hover-lift border-0 shadow-3d">
-                <CardContent className="p-0 space-y-6">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-lg leading-relaxed">
-                    "{testimonial.quote}"
+              <Card 
+                key={index}
+                className="glass-3d hover-lift p-10 border border-border/50 shadow-xl group transition-all duration-500"
+              >
+                <div className="space-y-6">
+                  <div className="text-6xl text-primary opacity-20">"</div>
+                  <p className="text-lg text-muted-foreground leading-relaxed italic">
+                    {testimonial.quote}
                   </p>
-                  <div className="pt-4 border-t border-border/50">
-                    <div className="font-semibold text-lg">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.title}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                  <div className="pt-6 border-t border-border/50">
+                    <p className="font-bold text-lg">{testimonial.author}</p>
+                    <p className="text-sm text-primary">{testimonial.title}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
                   </div>
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 relative">
+      {/* Final CTA */}
+      <section className="py-32 relative overflow-hidden">
         <ParticleBackground />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-muted/50 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
         
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            Ready to Build Your
-            <span className="block text-gradient-brand mt-2">AI Solution?</span>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold">
+            Ready to Transform
+            <span className="block text-gradient-brand mt-2">Your Business with AI?</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Start your journey today with our no-code AI platform. 
-            No credit card required for trial.
+          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            Join thousands of enterprises building the future with our no-code AI platform
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
             <Button 
               size="lg" 
-              className="glass-3d hover-lift text-lg px-12 py-7"
+              className="glass-3d hover-lift text-lg px-12 py-8 group shadow-2xl bg-gradient-to-r from-primary to-secondary border-0"
               onClick={handleStartFreeTrial}
             >
-              <Rocket className="mr-2 h-6 w-6" />
               Start Free Trial
+              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="glass-3d hover-glow text-lg px-12 py-7"
+              variant="outline"
+              className="glass-3d text-lg px-12 py-8 hover-glow border-2 shadow-xl hover:border-primary/50"
             >
-              Talk to Sales
-              <ArrowRight className="ml-2 h-5 w-5" />
+              Schedule Demo
             </Button>
           </div>
         </div>
