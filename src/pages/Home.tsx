@@ -131,9 +131,9 @@ const Home = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center space-y-8 animate-fade-in">
             {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-3d border border-primary/20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-3d border border-primary/30 bg-background/40">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-gradient-premium">AI-Powered Enterprise Solutions</span>
+              <span className="text-sm font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">AI-Powered Enterprise Solutions</span>
             </div>
 
             {/* Main Heading */}
@@ -147,7 +147,7 @@ const Home = () => {
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-light">
               Enterprise-grade artificial intelligence solutions that automate workflows, 
               enhance decision-making, and drive exponential growth
             </p>
@@ -174,18 +174,18 @@ const Home = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-8 pt-12 text-sm text-muted-foreground">
+            <div className="flex flex-wrap justify-center items-center gap-8 pt-12 text-sm text-foreground/70">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-primary" />
-                <span>No Credit Card Required</span>
+                <span className="font-medium">No Credit Card Required</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-primary" />
-                <span>14-Day Free Trial</span>
+                <span className="font-medium">14-Day Free Trial</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-primary" />
-                <span>Cancel Anytime</span>
+                <span className="font-medium">Cancel Anytime</span>
               </div>
             </div>
           </div>
@@ -213,13 +213,13 @@ const Home = () => {
                     <div className="inline-flex p-3 bg-gradient-premium rounded-xl shadow-glow">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
-                    <div className="text-4xl font-display font-bold text-gradient-premium">
+                    <div className="text-4xl font-display font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       {stat.count}
                     </div>
-                    <div className="text-sm font-semibold text-foreground">
+                    <div className="text-sm font-bold text-foreground">
                       {stat.label}
                     </div>
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-foreground/60 font-medium">
                       {stat.description}
                     </div>
                   </CardContent>
@@ -235,14 +235,14 @@ const Home = () => {
         <div className="absolute inset-0 mesh-gradient opacity-30" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-3d border border-primary/20 mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-3d border border-primary/30 bg-background/40 mb-4">
               <Cpu className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold">Core Capabilities</span>
+              <span className="text-sm font-bold text-foreground">Core Capabilities</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-display font-bold">
-              Powered by <span className="text-gradient-premium">Advanced AI</span>
+              Powered by <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">Advanced AI</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto font-medium">
               Enterprise-grade artificial intelligence that transforms how businesses operate
             </p>
           </div>
@@ -262,15 +262,15 @@ const Home = () => {
                     <div className="inline-flex p-3 bg-gradient-premium rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-500">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gradient-titanium">
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       {capability.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-foreground/70 leading-relaxed font-medium">
                       {capability.description}
                     </p>
                     <ul className="space-y-2 pt-2">
                       {capability.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-xs text-muted-foreground">
+                        <li key={idx} className="flex items-center text-xs text-foreground/65 font-medium">
                           <CheckCircle className="h-3 w-3 mr-2 text-primary flex-shrink-0" />
                           {feature}
                         </li>
@@ -443,35 +443,35 @@ const Home = () => {
               <CardContent className="p-8">
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold">Full Name</label>
+                    <label className="text-sm font-bold text-foreground">Full Name</label>
                     <input 
                       type="text" 
-                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/20 focus:border-primary/50 transition-colors outline-none bg-background/50"
+                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/30 focus:border-primary/60 transition-colors outline-none bg-background/60 text-foreground placeholder:text-foreground/40"
                       placeholder="John Doe"
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold">Email Address</label>
+                    <label className="text-sm font-bold text-foreground">Email Address</label>
                     <input 
                       type="email" 
-                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/20 focus:border-primary/50 transition-colors outline-none bg-background/50"
+                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/30 focus:border-primary/60 transition-colors outline-none bg-background/60 text-foreground placeholder:text-foreground/40"
                       placeholder="john@company.com"
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold">Company</label>
+                    <label className="text-sm font-bold text-foreground">Company</label>
                     <input 
                       type="text" 
-                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/20 focus:border-primary/50 transition-colors outline-none bg-background/50"
+                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/30 focus:border-primary/60 transition-colors outline-none bg-background/60 text-foreground placeholder:text-foreground/40"
                       placeholder="Your Company"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold">Message</label>
+                    <label className="text-sm font-bold text-foreground">Message</label>
                     <textarea 
-                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/20 focus:border-primary/50 transition-colors outline-none resize-none bg-background/50"
+                      className="w-full px-4 py-3 rounded-xl glass-3d border border-primary/30 focus:border-primary/60 transition-colors outline-none resize-none bg-background/60 text-foreground placeholder:text-foreground/40"
                       rows={4}
                       placeholder="Tell us about your project..."
                       required

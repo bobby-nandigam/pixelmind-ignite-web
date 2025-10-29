@@ -150,9 +150,9 @@ const Projects = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 mb-20">
-            <Badge className="glass-3d px-8 py-3 text-base font-semibold border-primary/20 shadow-lg hover-lift">
-              <Sparkles className="w-5 h-5 mr-2" />
-              Featured Projects
+            <Badge className="glass-3d px-8 py-3 text-base font-bold border-primary/30 shadow-lg hover-lift bg-background/40">
+              <Sparkles className="w-5 h-5 mr-2 text-primary" />
+              <span className="text-foreground">Featured Projects</span>
             </Badge>
             
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-none">
@@ -160,7 +160,7 @@ const Projects = () => {
               <span className="block text-gradient-brand mt-4">AI Projects</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-5xl mx-auto leading-relaxed font-light">
+            <p className="text-xl sm:text-2xl md:text-3xl text-foreground/75 max-w-5xl mx-auto leading-relaxed font-medium">
               Explore our portfolio of cutting-edge AI solutions transforming industries worldwide
             </p>
           </div>
@@ -179,10 +179,10 @@ const Projects = () => {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
-                  <div className="text-4xl font-bold mb-2 text-gradient-brand">
+                  <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-muted-foreground font-medium">
+                  <div className="text-sm text-foreground/70 font-bold">
                     {stat.label}
                   </div>
                 </Card>
@@ -244,10 +244,10 @@ const Projects = () => {
                   <div className="lg:col-span-3 p-10 lg:p-12 flex flex-col justify-between">
                     <div className="space-y-8">
                       <div>
-                        <h2 className="text-4xl lg:text-5xl font-bold mb-5 group-hover:text-gradient-brand transition-all duration-300">
+                        <h2 className="text-4xl lg:text-5xl font-bold mb-5 text-foreground group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                           {project.title}
                         </h2>
-                        <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                        <p className="text-lg lg:text-xl text-foreground/70 leading-relaxed font-medium">
                           {project.description}
                         </p>
                       </div>
@@ -257,7 +257,7 @@ const Projects = () => {
                         {project.tags.map((tag, tagIndex) => (
                           <Badge 
                             key={tagIndex}
-                            className="glass-3d px-4 py-2 text-sm font-semibold border-primary/20 hover-lift"
+                            className="glass-3d px-4 py-2 text-sm font-bold border-primary/30 hover-lift bg-background/40 text-foreground"
                           >
                             {tag}
                           </Badge>
@@ -279,7 +279,7 @@ const Projects = () => {
                               <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                                 <CheckCircle className="w-4 h-4 text-white" />
                               </div>
-                              <span className="text-sm font-medium">{feature}</span>
+                              <span className="text-sm font-bold text-foreground">{feature}</span>
                             </div>
                           ))}
                         </div>

@@ -262,9 +262,9 @@ const Services = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-10 animate-fade-in">
-            <Badge className="glass-3d px-8 py-3 text-base font-semibold border-primary/20 shadow-lg hover-lift">
-              <Sparkles className="w-5 h-5 mr-2" />
-              Enterprise No-Code AI Platform
+            <Badge className="glass-3d px-8 py-3 text-base font-bold border-primary/30 shadow-lg hover-lift bg-background/40">
+              <Sparkles className="w-5 h-5 mr-2 text-primary" />
+              <span className="text-foreground">Enterprise No-Code AI Platform</span>
             </Badge>
             
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-none">
@@ -272,7 +272,7 @@ const Services = () => {
               <span className="block text-gradient-brand mt-4">Without Code</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground max-w-5xl mx-auto leading-relaxed font-light">
+            <p className="text-xl sm:text-2xl md:text-3xl text-foreground/75 max-w-5xl mx-auto leading-relaxed font-medium">
               Empower your entire organization to create sophisticated AI solutions. 
               Our visual platform makes advanced AI accessible to everyone.
             </p>
@@ -297,18 +297,18 @@ const Services = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-16 flex flex-wrap justify-center gap-8 items-center text-sm text-muted-foreground">
+            <div className="pt-16 flex flex-wrap justify-center gap-8 items-center text-sm text-foreground/70">
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5 text-primary" />
-                <span>Enterprise Security</span>
+                <span className="font-bold">Enterprise Security</span>
               </div>
               <div className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-primary" />
-                <span>99.9% Uptime SLA</span>
+                <span className="font-bold">99.9% Uptime SLA</span>
               </div>
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-primary" />
-                <span>ISO 27001 Certified</span>
+                <span className="font-bold">ISO 27001 Certified</span>
               </div>
             </div>
           </div>
