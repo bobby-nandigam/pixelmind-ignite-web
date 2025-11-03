@@ -56,10 +56,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-background via-muted/20 to-background border-t border-border/50 overflow-hidden">
-      {/* Futuristic Background Effects */}
-      <div className="absolute inset-0 mesh-gradient opacity-30" />
-      <div className="absolute inset-0 holographic opacity-5" />
+    <footer className="relative bg-background/50 backdrop-blur-xl border-t border-border/50 overflow-hidden">
+      {/* Modern gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Newsletter Section - Holographic Card */}

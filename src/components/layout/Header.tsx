@@ -38,7 +38,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header className="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-border/50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -76,17 +76,17 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="hover-glow"
+              className="hover-glow rounded-full"
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
             <Button 
-              className="gradient-brand text-white hover-lift"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground hover-lift rounded-full px-6 font-semibold"
               onClick={handleGetStarted}
             >
-              Get Started
+              Try Now
             </Button>
           </div>
 
