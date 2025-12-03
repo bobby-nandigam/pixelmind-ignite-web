@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Database, Cloud, Code, Brain, Zap, Lock, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import ParticleBackground from "@/components/futuristic/ParticleBackground";
 
 const Integrations = () => {
   const { toast } = useToast();
@@ -20,7 +21,6 @@ const Integrations = () => {
         title: `Configuring ${integrationName}`,
         description: "Opening integration setup wizard...",
       });
-      // In a real app, this would open a configuration modal or redirect to setup
     }
   };
 
@@ -47,7 +47,6 @@ const Integrations = () => {
       title: "Downloading SDK",
       description: "Starting download of PixelMind SDK package...",
     });
-    // In a real app, this would trigger a download
   };
 
   const handleRequestIntegration = () => {
@@ -56,119 +55,40 @@ const Integrations = () => {
       description: "Redirecting to integration request form...",
     });
     setTimeout(() => {
-      // Navigate to contact page with integration request context
       window.location.href = "/contact";
     }, 1000);
   };
 
-  const handleContactEngineering = () => {
-    toast({
-      title: "Contacting Engineering Team",
-      description: "Opening direct communication with our engineering team...",
-    });
-    setTimeout(() => {
-      window.open("mailto:engineering@pixelmindlabs.com?subject=Custom Integration Request", "_blank");
-    }, 1000);
-  };
   const integrations = [
-    {
-      name: "PostgreSQL",
-      description: "Seamless database integration for complex data operations",
-      icon: Database,
-      category: "Database",
-      status: "Active",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      name: "AWS",
-      description: "Cloud infrastructure and deployment solutions",
-      icon: Cloud,
-      category: "Cloud",
-      status: "Active",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      name: "Streamlit",
-      description: "Interactive web applications for data science",
-      icon: Code,
-      category: "Framework",
-      status: "Active",
-      color: "from-red-500 to-red-600"
-    },
-    {
-      name: "Flask",
-      description: "Lightweight web framework for API development",
-      icon: Code,
-      category: "Framework", 
-      status: "Active",
-      color: "from-green-500 to-green-600"
-    },
-    {
-      name: "Hugging Face",
-      description: "State-of-the-art machine learning models",
-      icon: Brain,
-      category: "AI/ML",
-      status: "Active",
-      color: "from-yellow-500 to-yellow-600"
-    },
-    {
-      name: "TensorFlow",
-      description: "Deep learning and neural network frameworks",
-      icon: Brain,
-      category: "AI/ML",
-      status: "Active",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      name: "OpenAI",
-      description: "Advanced language models and AI capabilities",
-      icon: Zap,
-      category: "AI/ML",
-      status: "Active",
-      color: "from-cyan-500 to-cyan-600"
-    },
-    {
-      name: "Auth0",
-      description: "Secure authentication and authorization",
-      icon: Lock,
-      category: "Security",
-      status: "Coming Soon",
-      color: "from-indigo-500 to-indigo-600"
-    }
+    { name: "PostgreSQL", description: "Seamless database integration for complex data operations", icon: Database, category: "Database", status: "Active" },
+    { name: "AWS", description: "Cloud infrastructure and deployment solutions", icon: Cloud, category: "Cloud", status: "Active" },
+    { name: "Streamlit", description: "Interactive web applications for data science", icon: Code, category: "Framework", status: "Active" },
+    { name: "Flask", description: "Lightweight web framework for API development", icon: Code, category: "Framework", status: "Active" },
+    { name: "Hugging Face", description: "State-of-the-art machine learning models", icon: Brain, category: "AI/ML", status: "Active" },
+    { name: "TensorFlow", description: "Deep learning and neural network frameworks", icon: Brain, category: "AI/ML", status: "Active" },
+    { name: "OpenAI", description: "Advanced language models and AI capabilities", icon: Zap, category: "AI/ML", status: "Active" },
+    { name: "Auth0", description: "Secure authentication and authorization", icon: Lock, category: "Security", status: "Coming Soon" }
   ];
 
   const categories = ["All", "Database", "Cloud", "Framework", "AI/ML", "Security"];
 
   const apiFeatures = [
-    {
-      title: "RESTful APIs",
-      description: "Clean, documented APIs for seamless integration",
-      icon: Code
-    },
-    {
-      title: "Real-time Updates",
-      description: "WebSocket support for live data synchronization",
-      icon: Zap
-    },
-    {
-      title: "Enterprise Security",
-      description: "Bank-grade security with OAuth 2.0 and JWT",
-      icon: Lock
-    },
-    {
-      title: "Auto Scaling", 
-      description: "Infrastructure that scales with your needs",
-      icon: Cloud
-    }
+    { title: "RESTful APIs", description: "Clean, documented APIs for seamless integration", icon: Code },
+    { title: "Real-time Updates", description: "WebSocket support for live data synchronization", icon: Zap },
+    { title: "Enterprise Security", description: "Bank-grade security with OAuth 2.0 and JWT", icon: Lock },
+    { title: "Auto Scaling", description: "Infrastructure that scales with your needs", icon: Cloud }
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 glacier-bg">
+      <ParticleBackground />
+
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-muted/30 to-background neural-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-gradient-brand text-white">Platform Integrations</Badge>
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 hero-gradient" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <Badge className="mb-6 glacier-card border-primary/20 px-6 py-2">Platform Integrations</Badge>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
               Seamless <span className="text-gradient-brand">Integrations</span>
             </h1>
@@ -182,8 +102,9 @@ const Integrations = () => {
       </section>
 
       {/* Integration Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20">
+        <div className="absolute inset-0 section-gradient" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Supported <span className="text-gradient-brand">Platforms</span>
@@ -194,7 +115,7 @@ const Integrations = () => {
                   key={category} 
                   variant={selectedCategory === category ? "default" : "outline"} 
                   size="sm" 
-                  className="hover-glow"
+                  className={selectedCategory === category ? "gradient-brand text-white" : "glacier-card hover-glow"}
                   onClick={() => handleCategoryFilter(category)}
                 >
                   {category}
@@ -207,9 +128,9 @@ const Integrations = () => {
             {integrations.map((integration, index) => {
               const Icon = integration.icon;
               return (
-                <Card key={index} className="hover-lift border-border/50 bg-card/50 backdrop-blur-sm">
-                  <CardContent className="p-6 text-center">
-                    <div className={`p-4 bg-gradient-to-br ${integration.color} rounded-full w-fit mx-auto mb-4 glow-brand`}>
+                <Card key={index} className="glacier-card hover-lift text-center">
+                  <CardContent className="p-6">
+                    <div className="p-4 gradient-brand rounded-full w-fit mx-auto mb-4 shadow-glacier">
                       <Icon className="h-8 w-8 text-white" />
                     </div>
                     
@@ -225,13 +146,11 @@ const Integrations = () => {
                       <Badge variant="secondary" className="text-xs">
                         {integration.category}
                       </Badge>
-                      <Badge 
-                        className={`text-xs ${
-                          integration.status === "Active" 
-                            ? "bg-green-500 text-white" 
-                            : "bg-yellow-500 text-white"
-                        }`}
-                      >
+                      <Badge className={`text-xs ${
+                        integration.status === "Active" 
+                          ? "bg-green-500 text-white" 
+                          : "bg-yellow-500 text-black"
+                      }`}>
                         {integration.status}
                       </Badge>
                     </div>
@@ -239,7 +158,7 @@ const Integrations = () => {
                     <Button 
                       size="sm" 
                       variant="outline" 
-                      className="w-full hover-glow"
+                      className="w-full glacier-card hover-glow"
                       disabled={integration.status === "Coming Soon"}
                       onClick={() => handleConfigure(integration.name, integration.status)}
                     >
@@ -254,8 +173,9 @@ const Integrations = () => {
       </section>
 
       {/* API Features */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20">
+        <div className="absolute inset-0 section-gradient" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Developer <span className="text-gradient-brand">Friendly</span>
@@ -270,9 +190,9 @@ const Integrations = () => {
             {apiFeatures.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="hover-lift text-center">
+                <Card key={index} className="glacier-card hover-lift text-center">
                   <CardContent className="p-6">
-                    <div className="p-3 bg-gradient-brand rounded-full w-fit mx-auto mb-4">
+                    <div className="p-3 gradient-brand rounded-full w-fit mx-auto mb-4">
                       <Icon className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-xl font-display font-semibold mb-3">
@@ -290,8 +210,8 @@ const Integrations = () => {
       </section>
 
       {/* Code Example */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Simple <span className="text-gradient-brand">Integration</span>
@@ -301,9 +221,9 @@ const Integrations = () => {
             </p>
           </div>
 
-          <Card className="max-w-4xl mx-auto bg-gray-900 text-green-400 overflow-hidden">
-            <CardContent className="p-8">
-              <pre className="text-sm overflow-x-auto">
+          <Card className="max-w-4xl mx-auto glacier-card overflow-hidden">
+            <div className="bg-gray-900 dark:bg-gray-950 p-8">
+              <pre className="text-sm text-green-400 overflow-x-auto">
                 <code>{`import { PixelMindAPI } from '@pixelmind/sdk';
 
 const client = new PixelMindAPI({
@@ -326,13 +246,13 @@ const query = await client.dataquery.generate({
 console.log(response.message);
 console.log(query.sql);`}</code>
               </pre>
-            </CardContent>
+            </div>
           </Card>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="gradient-brand text-white hover-lift mr-4"
+              className="gradient-brand text-white hover-lift"
               onClick={handleViewDocs}
             >
               View Documentation
@@ -341,7 +261,7 @@ console.log(query.sql);`}</code>
             <Button 
               size="lg" 
               variant="outline" 
-              className="hover-glow"
+              className="glacier-card hover-glow"
               onClick={handleDownloadSDK}
             >
               Download SDK
@@ -351,13 +271,14 @@ console.log(query.sql);`}</code>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-brand text-white relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-brand" />
         <div className="absolute inset-0 neural-bg opacity-20" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white">
             Need Custom Integration?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
             Don't see your platform listed? Our team can build custom integrations 
             tailored to your specific technology stack and requirements.
           </p>
@@ -374,8 +295,7 @@ console.log(query.sql);`}</code>
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-lg px-8 py-6 border-white/20 text-white hover:bg-white/10"
-              onClick={handleContactEngineering}
+              className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/20"
             >
               Contact Engineering
             </Button>

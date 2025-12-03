@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, User, TrendingUp, Brain, Zap, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import ParticleBackground from "@/components/futuristic/ParticleBackground";
 
 const Blog = () => {
   const featuredPost = {
@@ -12,7 +13,6 @@ const Blog = () => {
     date: "September 22, 2025",
     readTime: "12 min read",
     category: "Quantum AI",
-    image: "/placeholder.svg",
     featured: true
   };
 
@@ -24,7 +24,6 @@ const Blog = () => {
       date: "September 20, 2025",
       readTime: "8 min read",
       category: "Multi-Agent AI",
-      image: "/placeholder.svg",
       icon: Brain
     },
     {
@@ -34,7 +33,6 @@ const Blog = () => {
       date: "September 18, 2025",
       readTime: "15 min read",
       category: "Machine Learning",
-      image: "/placeholder.svg",
       icon: Zap
     },
     {
@@ -44,7 +42,6 @@ const Blog = () => {
       date: "September 15, 2025",
       readTime: "11 min read",
       category: "Healthcare",
-      image: "/placeholder.svg",
       icon: Brain
     },
     {
@@ -54,7 +51,6 @@ const Blog = () => {
       date: "September 12, 2025",
       readTime: "13 min read",
       category: "Quantum Computing",
-      image: "/placeholder.svg",
       icon: Zap
     },
     {
@@ -64,7 +60,6 @@ const Blog = () => {
       date: "September 10, 2025",
       readTime: "9 min read",
       category: "Edge AI",
-      image: "/placeholder.svg",
       icon: Brain
     },
     {
@@ -74,28 +69,7 @@ const Blog = () => {
       date: "September 8, 2025",
       readTime: "10 min read",
       category: "Financial AI",
-      image: "/placeholder.svg",
       icon: TrendingUp
-    },
-    {
-      title: "Building the Future: Our Vision for AI in 2026 and Beyond",
-      excerpt: "Looking ahead to the next phase of AI evolution, including consciousness simulation, cross-reality integration, and planetary-scale intelligence networks.",
-      author: "Chief Technology Officer",
-      date: "September 5, 2025",
-      readTime: "14 min read",
-      category: "Future Tech",
-      image: "/placeholder.svg",
-      icon: Sparkles
-    },
-    {
-      title: "Zero-Code AI: How Non-Technical Users Built 1M+ AI Models This Month",
-      excerpt: "September 2025 milestone: Over 1 million AI models created by business users without writing a single line of code using our platform.",
-      author: "Product Success Team",
-      date: "September 3, 2025",
-      readTime: "7 min read",
-      category: "No-Code AI",
-      image: "/placeholder.svg",
-      icon: Zap
     }
   ];
 
@@ -106,18 +80,19 @@ const Blog = () => {
     { name: "Machine Learning", count: 1 },
     { name: "Healthcare", count: 1 },
     { name: "Edge AI", count: 1 },
-    { name: "Financial AI", count: 1 },
-    { name: "Future Tech", count: 1 },
-    { name: "No-Code AI", count: 1 }
+    { name: "Financial AI", count: 1 }
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 glacier-bg">
+      <ParticleBackground />
+
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-muted/30 to-background neural-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-gradient-brand text-white">Insights & Updates</Badge>
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 hero-gradient" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <Badge className="mb-6 glacier-card border-primary/20 px-6 py-2">Insights & Updates</Badge>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
               PixelMind <span className="text-gradient-brand">Blog</span>
             </h1>
@@ -129,16 +104,16 @@ const Blog = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-3">
             {/* Featured Post */}
-            <Card className="mb-16 overflow-hidden hover-lift glow-brand">
-              <div className="relative h-64 bg-gradient-brand">
+            <Card className="mb-16 overflow-hidden glacier-card hover-lift">
+              <div className="relative h-64 gradient-brand">
                 <div className="absolute inset-0 neural-bg opacity-20" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-yellow-500 text-black">Featured</Badge>
+                  <Badge className="bg-yellow-500 text-black font-bold">Featured</Badge>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <TrendingUp className="h-24 w-24 text-white/30" />
@@ -159,9 +134,7 @@ const Blog = () => {
                 </div>
 
                 <h2 className="text-3xl font-display font-bold mb-4 hover:text-primary transition-colors">
-                  <Link to="#" className="hover:text-primary">
-                    {featuredPost.title}
-                  </Link>
+                  <Link to="#">{featuredPost.title}</Link>
                 </h2>
 
                 <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -170,12 +143,10 @@ const Blog = () => {
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-brand rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 gradient-brand rounded-full flex items-center justify-center">
                       <User className="h-5 w-5 text-white" />
                     </div>
-                    <div>
-                      <div className="font-medium">{featuredPost.author}</div>
-                    </div>
+                    <div className="font-medium">{featuredPost.author}</div>
                   </div>
 
                   <Button className="gradient-brand text-white hover-lift">
@@ -191,7 +162,7 @@ const Blog = () => {
               {blogPosts.map((post, index) => {
                 const Icon = post.icon;
                 return (
-                  <Card key={index} className="hover-lift overflow-hidden">
+                  <Card key={index} className="glacier-card hover-lift overflow-hidden">
                     <div className="relative h-48 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
                       <Icon className="h-16 w-16 text-muted-foreground/30" />
                     </div>
@@ -206,9 +177,7 @@ const Blog = () => {
                       </div>
                       
                       <CardTitle className="text-xl font-display leading-tight hover:text-primary transition-colors">
-                        <Link to="#" className="hover:text-primary">
-                          {post.title}
-                        </Link>
+                        <Link to="#">{post.title}</Link>
                       </CardTitle>
                     </CardHeader>
 
@@ -235,7 +204,7 @@ const Blog = () => {
 
             {/* Load More */}
             <div className="text-center mt-12">
-              <Button size="lg" variant="outline" className="hover-glow">
+              <Button size="lg" variant="outline" className="glacier-card hover-glow">
                 Load More Articles
               </Button>
             </div>
@@ -245,13 +214,13 @@ const Blog = () => {
           <div className="lg:col-span-1">
             <div className="space-y-8 sticky top-24">
               {/* Categories */}
-              <Card>
+              <Card className="glacier-card">
                 <CardHeader>
                   <CardTitle className="text-lg font-display">Categories</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
                   {categories.map((category, index) => (
-                    <div key={index} className="flex items-center justify-between p-2 rounded hover:bg-muted/50 cursor-pointer transition-colors">
+                    <div key={index} className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 cursor-pointer transition-colors">
                       <span className="text-sm">{category.name}</span>
                       <Badge variant="secondary" className="text-xs">
                         {category.count}
@@ -262,12 +231,13 @@ const Blog = () => {
               </Card>
 
               {/* Newsletter Signup */}
-              <Card className="bg-gradient-brand text-white">
-                <CardContent className="p-6 text-center">
+              <Card className="glacier-card overflow-hidden">
+                <div className="absolute inset-0 gradient-brand opacity-90" />
+                <CardContent className="p-6 text-center relative z-10">
                   <div className="p-3 bg-white/20 rounded-full w-fit mx-auto mb-4">
-                    <Zap className="h-6 w-6" />
+                    <Sparkles className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-display font-semibold mb-3">
+                  <h3 className="font-display font-semibold mb-3 text-white">
                     Stay Updated
                   </h3>
                   <p className="text-sm text-white/80 mb-4">
@@ -280,7 +250,7 @@ const Blog = () => {
               </Card>
 
               {/* Popular Tags */}
-              <Card>
+              <Card className="glacier-card">
                 <CardHeader>
                   <CardTitle className="text-lg font-display">Popular Tags</CardTitle>
                 </CardHeader>
