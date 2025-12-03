@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Calendar, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import ParticleBackground from "@/components/futuristic/ParticleBackground";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -31,17 +32,13 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     toast({
       title: "Message Sent Successfully!",
       description: "We'll get back to you within 24 hours. Check your email for confirmation.",
-      variant: "default"
     });
     
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -69,18 +66,11 @@ const Contact = () => {
       title: "Booking Consultation",
       description: "Redirecting to our calendar booking system...",
     });
-    // In a real app, this would redirect to a calendar booking system
     setTimeout(() => {
       window.open("https://calendly.com/pixelmind-labs", "_blank");
     }, 1000);
   };
 
-  const handleSocialClick = (platform: string) => {
-    toast({
-      title: `Opening ${platform}`,
-      description: `Redirecting to our ${platform} page...`,
-    });
-  };
   const contactInfo = [
     {
       icon: Mail,
@@ -118,12 +108,15 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 glacier-bg">
+      <ParticleBackground />
+
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-muted/30 to-background neural-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-gradient-brand text-white">Get in Touch</Badge>
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 hero-gradient" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <Badge className="mb-6 glacier-card border-primary/20 px-6 py-2">Get in Touch</Badge>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
               Let's Build Something <span className="text-gradient-brand">Amazing</span>
             </h1>
@@ -135,14 +128,14 @@ const Contact = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="hover-lift glow-brand">
+            <Card className="glacier-card hover-lift">
               <CardHeader>
                 <CardTitle className="text-2xl font-display flex items-center gap-3">
-                  <div className="p-2 bg-gradient-brand rounded-lg">
+                  <div className="p-2 gradient-brand rounded-lg">
                     <MessageSquare className="h-6 w-6 text-white" />
                   </div>
                   Send us a Message
@@ -158,7 +151,7 @@ const Contact = () => {
                     <label className="text-sm font-medium mb-2 block">Name *</label>
                     <Input 
                       placeholder="Your full name" 
-                      className="hover-glow focus:glow-brand"
+                      className="glacier-card border-border/50 focus:border-primary"
                       value={formData.name}
                       onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                     />
@@ -168,7 +161,7 @@ const Contact = () => {
                     <Input 
                       type="email" 
                       placeholder="your.email@company.com" 
-                      className="hover-glow focus:glow-brand"
+                      className="glacier-card border-border/50 focus:border-primary"
                       value={formData.email}
                       onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                     />
@@ -180,7 +173,7 @@ const Contact = () => {
                     <label className="text-sm font-medium mb-2 block">Company</label>
                     <Input 
                       placeholder="Your company name" 
-                      className="hover-glow focus:glow-brand"
+                      className="glacier-card border-border/50 focus:border-primary"
                       value={formData.company}
                       onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
                     />
@@ -189,7 +182,7 @@ const Contact = () => {
                     <label className="text-sm font-medium mb-2 block">Phone</label>
                     <Input 
                       placeholder="+91 98765 43210" 
-                      className="hover-glow focus:glow-brand"
+                      className="glacier-card border-border/50 focus:border-primary"
                       value={formData.phone}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                     />
@@ -202,19 +195,18 @@ const Contact = () => {
                     {services.map((service, index) => (
                       <div 
                         key={index} 
-                        className={`flex items-center space-x-2 p-3 border border-border rounded-lg hover:bg-muted/50 cursor-pointer transition-colors ${
-                          formData.services.includes(service.name) ? 'bg-primary/10 border-primary' : ''
+                        className={`flex items-center space-x-2 p-3 glacier-card rounded-lg cursor-pointer transition-all duration-300 ${
+                          formData.services.includes(service.name) ? 'border-primary bg-primary/10' : 'hover:border-primary/50'
                         }`}
                         onClick={() => handleServiceToggle(service.name)}
                       >
                         <input 
                           type="checkbox" 
-                          id={`service-${index}`} 
-                          className="rounded"
+                          className="rounded accent-primary"
                           checked={formData.services.includes(service.name)}
                           onChange={() => handleServiceToggle(service.name)}
                         />
-                        <label htmlFor={`service-${index}`} className="text-sm cursor-pointer flex-1">
+                        <label className="text-sm cursor-pointer flex-1">
                           <div className="font-medium">{service.name}</div>
                           <div className="text-xs text-muted-foreground">{service.description}</div>
                         </label>
@@ -225,25 +217,23 @@ const Contact = () => {
 
                 <div>
                   <label className="text-sm font-medium mb-2 block">Project Budget</label>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     {["< ₹8L", "₹8L - ₹20L", "₹20L - ₹40L", "₹40L+"].map((budget, index) => (
                       <div 
                         key={index} 
-                        className={`flex items-center space-x-2 p-3 border border-border rounded-lg hover:bg-muted/50 cursor-pointer transition-colors ${
-                          formData.budget === budget ? 'bg-primary/10 border-primary' : ''
+                        className={`flex items-center space-x-2 p-3 glacier-card rounded-lg cursor-pointer transition-all duration-300 ${
+                          formData.budget === budget ? 'border-primary bg-primary/10' : 'hover:border-primary/50'
                         }`}
                         onClick={() => setFormData(prev => ({ ...prev, budget }))}
                       >
                         <input 
                           type="radio" 
                           name="budget" 
-                          id={`budget-${index}`}
+                          className="accent-primary"
                           checked={formData.budget === budget}
                           onChange={() => setFormData(prev => ({ ...prev, budget }))}
                         />
-                        <label htmlFor={`budget-${index}`} className="text-sm cursor-pointer">
-                          {budget}
-                        </label>
+                        <label className="text-sm cursor-pointer">{budget}</label>
                       </div>
                     ))}
                   </div>
@@ -254,7 +244,7 @@ const Contact = () => {
                   <Textarea 
                     placeholder="Tell us about your project, goals, and how we can help..."
                     rows={6}
-                    className="hover-glow focus:glow-brand"
+                    className="glacier-card border-border/50 focus:border-primary"
                     value={formData.message}
                     onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   />
@@ -279,8 +269,7 @@ const Contact = () => {
 
           {/* Contact Info & Quick Actions */}
           <div className="space-y-8">
-            {/* Contact Information */}
-            <Card className="hover-lift">
+            <Card className="glacier-card hover-lift">
               <CardHeader>
                 <CardTitle className="text-xl font-display">Contact Information</CardTitle>
               </CardHeader>
@@ -289,7 +278,7 @@ const Contact = () => {
                   const Icon = info.icon;
                   return (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="p-2 bg-gradient-brand rounded-lg flex-shrink-0">
+                      <div className="p-2 gradient-brand rounded-lg flex-shrink-0">
                         <Icon className="h-5 w-5 text-white" />
                       </div>
                       <div>
@@ -303,14 +292,14 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Quick Actions */}
-            <Card className="hover-lift bg-gradient-brand text-white">
-              <CardContent className="p-6">
+            <Card className="glacier-card hover-lift overflow-hidden">
+              <div className="absolute inset-0 gradient-brand opacity-90" />
+              <CardContent className="p-6 relative z-10">
                 <div className="text-center mb-6">
                   <div className="p-3 bg-white/20 rounded-full w-fit mx-auto mb-4">
-                    <Calendar className="h-6 w-6" />
+                    <Calendar className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="font-display font-semibold mb-2">
+                  <h3 className="font-display font-semibold mb-2 text-white">
                     Schedule a Consultation
                   </h3>
                   <p className="text-sm text-white/80">
@@ -336,15 +325,12 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Response Time */}
-            <Card className="hover-lift">
+            <Card className="glacier-card hover-lift">
               <CardContent className="p-6 text-center">
-                <div className="p-3 bg-green-100 rounded-full w-fit mx-auto mb-4">
-                  <Clock className="h-6 w-6 text-green-600" />
+                <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-full w-fit mx-auto mb-4">
+                  <Clock className="h-6 w-6 text-green-600 dark:text-green-400" />
                 </div>
-                <h3 className="font-display font-semibold mb-2">
-                  Quick Response
-                </h3>
+                <h3 className="font-display font-semibold mb-2">Quick Response</h3>
                 <p className="text-sm text-muted-foreground mb-4">
                   We typically respond to inquiries within 2-4 hours during business hours.
                 </p>
@@ -360,42 +346,14 @@ const Contact = () => {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Social Links */}
-            <Card className="hover-lift">
-              <CardContent className="p-6">
-                <h3 className="font-display font-semibold mb-4 text-center">
-                  Follow Us
-                </h3>
-                <div className="flex justify-center space-x-4">
-                  {[
-                    { name: "LinkedIn", icon: "🔗", url: "https://linkedin.com/company/pixelmind-labs" },
-                    { name: "Twitter", icon: "🐦", url: "https://twitter.com/pixelmindlabs" },
-                    { name: "GitHub", icon: "💻", url: "https://github.com/pixelmind-labs" }
-                  ].map((social, index) => (
-                    <Button 
-                      key={index} 
-                      variant="outline" 
-                      size="sm" 
-                      className="hover-glow"
-                      onClick={() => {
-                        handleSocialClick(social.name);
-                        window.open(social.url, "_blank");
-                      }}
-                    >
-                      {social.icon} {social.name}
-                    </Button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20">
+        <div className="absolute inset-0 section-gradient" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Frequently Asked <span className="text-gradient-brand">Questions</span>
@@ -421,10 +379,10 @@ const Contact = () => {
                 answer: "We work across various industries including healthcare, fintech, entertainment, e-commerce, and more. Our AI solutions are adaptable to virtually any sector."
               }
             ].map((faq, index) => (
-              <Card key={index} className="hover-lift">
+              <Card key={index} className="glacier-card hover-lift">
                 <CardContent className="p-6">
-                  <h4 className="font-semibold mb-2">{faq.question}</h4>
-                  <p className="text-muted-foreground text-sm">{faq.answer}</p>
+                  <h3 className="font-display font-semibold mb-3">{faq.question}</h3>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </CardContent>
               </Card>
             ))}
