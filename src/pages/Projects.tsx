@@ -14,14 +14,25 @@ import {
   CheckCircle,
   Target,
   Shield,
-  Rocket
+  Rocket,
+  Eye,
+  Heart,
+  MessageCircle,
+  Clock,
+  Globe,
+  Code2,
+  Layers,
+  Play
 } from "lucide-react";
 import chatmindPreview from "@/assets/chatmind-preview.jpg";
 import dataqueryPreview from "@/assets/dataquery-preview.jpg";
 import mediassistPreview from "@/assets/mediassist-preview.jpg";
 import ParticleBackground from "@/components/futuristic/ParticleBackground";
+import { useState } from "react";
 
 const Projects = () => {
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+
   const projects = [
     {
       title: "ChatMind AI",
@@ -42,7 +53,9 @@ const Projects = () => {
         "Enterprise Security Standards"
       ],
       github: "https://github.com",
-      demo: "https://chatmind.demo"
+      demo: "https://chatmind.demo",
+      gradient: "from-violet-500 via-purple-500 to-fuchsia-500",
+      bgGradient: "from-violet-500/30 to-fuchsia-500/10"
     },
     {
       title: "DataQuery Pro",
@@ -63,7 +76,9 @@ const Projects = () => {
         "Advanced Security & Encryption"
       ],
       github: "https://github.com",
-      demo: "https://dataquery.demo"
+      demo: "https://dataquery.demo",
+      gradient: "from-blue-500 via-cyan-500 to-teal-500",
+      bgGradient: "from-blue-500/30 to-teal-500/10"
     },
     {
       title: "MediaAssist AI",
@@ -84,15 +99,17 @@ const Projects = () => {
         "Advanced Editing Suite"
       ],
       github: "https://github.com",
-      demo: "https://mediaassist.demo"
+      demo: "https://mediaassist.demo",
+      gradient: "from-orange-500 via-amber-500 to-yellow-500",
+      bgGradient: "from-orange-500/30 to-yellow-500/10"
     }
   ];
 
   const stats = [
-    { icon: Users, value: "100K+", label: "Active Users" },
-    { icon: Zap, value: "99.9%", label: "Average Uptime" },
-    { icon: TrendingUp, value: "4.7/5", label: "User Satisfaction" },
-    { icon: Award, value: "50+", label: "Awards Won" }
+    { icon: Users, value: "100K+", label: "Active Users", color: "from-violet-500 to-purple-600" },
+    { icon: Zap, value: "99.9%", label: "Average Uptime", color: "from-blue-500 to-cyan-600" },
+    { icon: TrendingUp, value: "4.7/5", label: "User Satisfaction", color: "from-emerald-500 to-teal-600" },
+    { icon: Award, value: "50+", label: "Awards Won", color: "from-orange-500 to-amber-600" }
   ];
 
   const testimonials = [
@@ -119,152 +136,204 @@ const Projects = () => {
     }
   ];
 
-  return (
-    <div className="min-h-screen pt-16 glacier-bg">
-      <ParticleBackground />
+  const techStack = [
+    { name: "React", icon: Code2 },
+    { name: "Python", icon: Code2 },
+    { name: "TensorFlow", icon: Layers },
+    { name: "AWS", icon: Globe },
+    { name: "PostgreSQL", icon: Layers },
+    { name: "Node.js", icon: Code2 }
+  ];
 
+  return (
+    <div className="min-h-screen pt-16 glacier-bg overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-24 pb-32 overflow-hidden">
+        <ParticleBackground />
         <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8 mb-20 animate-fade-in-up">
-            <Badge className="glacier-card px-8 py-3 text-base font-bold border-primary/30 shadow-glacier">
-              <Sparkles className="w-5 h-5 mr-2 text-primary" />
-              Featured Projects
+          <div className="text-center space-y-10 animate-fade-in-up">
+            
+            {/* Badge */}
+            <Badge className="glacier-card px-6 py-3 text-sm font-semibold border-primary/30 shadow-glacier hover-lift">
+              <Sparkles className="w-4 h-4 mr-2 text-primary animate-pulse" />
+              <span className="text-gradient-brand font-bold">Featured AI Projects</span>
             </Badge>
             
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-none">
-              Our Best
-              <span className="block text-gradient-brand mt-4">AI Projects</span>
+            {/* Title */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95]">
+              <span className="block text-foreground">Our Best</span>
+              <span className="block mt-3 text-gradient-brand">AI Projects</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed font-medium">
-              Explore our portfolio of cutting-edge AI solutions transforming industries worldwide
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Explore our portfolio of cutting-edge AI solutions
+              <span className="block mt-2 text-foreground font-medium">
+                transforming industries worldwide
+              </span>
             </p>
-          </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <Card key={index} className="glacier-card hover-lift p-8 text-center group">
-                  <div className="mb-4 flex justify-center">
-                    <div className="w-16 h-16 rounded-2xl gradient-brand flex items-center justify-center shadow-glacier group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-8 h-8 text-white" />
+            {/* Stats Grid */}
+            <div className="pt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div 
+                    key={index}
+                    className="glacier-card p-5 rounded-2xl hover-lift group"
+                  >
+                    <div className="flex flex-col items-center gap-3">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-3xl font-black text-gradient-brand">{stat.value}</div>
+                        <div className="text-xs font-medium text-muted-foreground">{stat.label}</div>
+                      </div>
                     </div>
                   </div>
-                  <div className="text-4xl font-bold mb-2 text-gradient-brand">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground font-bold">{stat.label}</div>
-                </Card>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Projects Showcase */}
-      <section className="py-24 relative">
+      <section className="py-28 relative">
         <div className="absolute inset-0 section-gradient" />
+        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
+          
+          {/* Section Header */}
+          <div className="text-center mb-20 space-y-6">
+            <Badge className="glacier-card px-6 py-2.5 border-primary/20 shadow-glacier">
+              <Rocket className="w-4 h-4 mr-2 text-primary" />
+              <span className="font-bold text-foreground">Project Showcase</span>
+            </Badge>
+            
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black">
+              <span className="block text-foreground mb-2">Production-Ready</span>
+              <span className="text-gradient-brand">AI Solutions</span>
+            </h2>
+          </div>
+
+          {/* Projects */}
+          <div className="space-y-16">
             {projects.map((project, index) => (
-              <Card key={index} className="glacier-card overflow-hidden shadow-glacier-lg hover-lift group">
-                <div className="absolute top-8 right-8 z-20">
-                  <Badge className={`glacier-card px-5 py-2.5 font-bold shadow-glacier ${
+              <Card 
+                key={index} 
+                className={`group glacier-card border-2 overflow-hidden shadow-glacier-lg transition-all duration-500 hover-lift ${
+                  activeProject === index ? 'border-primary/50' : 'border-border/50'
+                }`}
+                onMouseEnter={() => setActiveProject(index)}
+                onMouseLeave={() => setActiveProject(null)}
+              >
+                {/* Status Badge */}
+                <div className="absolute top-6 right-6 z-20">
+                  <Badge className={`px-4 py-2 font-bold shadow-lg ${
                     project.status === "Production" 
-                      ? "border-green-500/30 text-green-600 dark:text-green-400" 
-                      : "border-blue-500/30 text-blue-600 dark:text-blue-400"
+                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-0" 
+                      : "bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0"
                   }`}>
-                    <div className={`w-2 h-2 rounded-full mr-2 ${
-                      project.status === "Production" ? "bg-green-500" : "bg-blue-500"
-                    } animate-pulse`} />
+                    <div className={`w-2 h-2 rounded-full mr-2 bg-white animate-pulse`} />
                     {project.status}
                   </Badge>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-                  {/* Project Image */}
-                  <div className="lg:col-span-2 relative overflow-hidden bg-gradient-to-br from-muted/50 to-muted">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  
+                  {/* Image Section */}
+                  <div className="relative h-[400px] lg:h-auto overflow-hidden">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient}`} />
                     <img 
                       src={project.image} 
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                     
-                    <div className="absolute bottom-6 left-6 right-6 space-y-3">
+                    {/* Floating Metrics */}
+                    <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-3">
                       {Object.entries(project.metrics).map(([key, value], idx) => (
-                        <div key={idx} className="glacier-card p-4 rounded-xl">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm text-muted-foreground capitalize">{key}</span>
-                            <span className="text-lg font-bold text-gradient-brand">{value}</span>
-                          </div>
+                        <div key={idx} className="glacier-card p-3 rounded-xl text-center">
+                          <div className="text-lg font-black text-gradient-brand">{value}</div>
+                          <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">{key}</div>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Project Details */}
-                  <div className="lg:col-span-3 p-10 lg:p-12 flex flex-col justify-between">
-                    <div className="space-y-8">
+                  {/* Content Section */}
+                  <CardContent className="p-8 lg:p-10 flex flex-col justify-between">
+                    <div className="space-y-6">
+                      
+                      {/* Title */}
                       <div>
-                        <h2 className="text-4xl lg:text-5xl font-bold mb-5 group-hover:text-gradient-brand transition-all duration-300">
+                        <h3 className="text-3xl lg:text-4xl font-black text-foreground group-hover:text-gradient-brand transition-all duration-300 mb-3">
                           {project.title}
-                        </h2>
-                        <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed font-medium">
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
                           {project.description}
                         </p>
                       </div>
 
-                      <div className="flex flex-wrap gap-3">
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, tagIndex) => (
-                          <Badge key={tagIndex} className="glacier-card px-4 py-2 text-sm font-bold border-primary/30 hover-lift">
+                          <Badge 
+                            key={tagIndex} 
+                            className={`px-3 py-1.5 text-xs font-bold bg-gradient-to-r ${project.gradient} text-white border-0 shadow`}
+                          >
                             {tag}
                           </Badge>
                         ))}
                       </div>
 
+                      {/* Features */}
                       <div>
-                        <h3 className="text-2xl font-bold mb-5 flex items-center gap-2">
-                          <Target className="w-6 h-6 text-primary" />
+                        <h4 className="text-sm font-bold mb-3 flex items-center gap-2 text-foreground">
+                          <Target className="w-4 h-4 text-primary" />
                           Key Features
-                        </h3>
-                        <div className="grid gap-3">
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {project.features.map((feature, fIdx) => (
-                            <div key={fIdx} className="flex items-center gap-3 p-4 rounded-xl glacier-card hover-lift transition-all duration-300 hover:border-primary/30">
-                              <div className="flex-shrink-0 w-8 h-8 rounded-full gradient-brand flex items-center justify-center">
-                                <CheckCircle className="w-4 h-4 text-white" />
-                              </div>
-                              <span className="text-sm font-bold">{feature}</span>
+                            <div 
+                              key={fIdx} 
+                              className="flex items-center gap-2 p-2.5 rounded-lg bg-muted/30 border border-border/30 hover:border-primary/30 transition-colors"
+                            >
+                              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                              <span className="text-xs font-medium text-foreground line-clamp-1">{feature}</span>
                             </div>
                           ))}
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-border/50">
+                    {/* CTAs */}
+                    <div className="flex flex-col sm:flex-row gap-3 pt-8">
                       <Button 
                         size="lg"
-                        className="glacier-card hover-lift px-8 py-6 group/btn shadow-glacier gradient-brand border-0"
+                        className={`flex-1 bg-gradient-to-r ${project.gradient} text-white border-0 shadow-lg hover:opacity-90 font-bold rounded-xl`}
                         onClick={() => window.open(project.demo, '_blank')}
                       >
-                        <ExternalLink className="mr-2 h-5 w-5" />
-                        View Live Demo
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
                       <Button 
                         size="lg"
                         variant="outline"
-                        className="glacier-card px-8 py-6 border-2 hover:border-primary/50 transition-all duration-300"
+                        className="flex-1 glacier-card border-2 hover:border-primary/50 font-bold rounded-xl"
                         onClick={() => window.open(project.github, '_blank')}
                       >
-                        <Github className="mr-2 h-5 w-5" />
-                        View Code
+                        <Github className="mr-2 h-4 w-4" />
+                        Source Code
                       </Button>
                     </div>
-                  </div>
+                  </CardContent>
                 </div>
               </Card>
             ))}
@@ -272,54 +341,85 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 section-gradient" />
+      {/* Tech Stack Section */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20 space-y-6">
-            <Badge className="glacier-card px-6 py-2 border-primary/20">
-              <Star className="w-4 h-4 mr-2" />
-              Client Success
+          <div className="text-center mb-12">
+            <Badge className="glacier-card px-6 py-2 border-primary/20 shadow-glacier">
+              <Layers className="w-4 h-4 mr-2 text-primary" />
+              <span className="font-bold text-foreground">Technology Stack</span>
             </Badge>
-            <h2 className="text-5xl sm:text-6xl font-bold text-gradient-brand">
+            <h2 className="text-3xl font-black mt-4 text-gradient-brand">Built with Modern Tech</h2>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            {techStack.map((tech, index) => (
+              <div 
+                key={index}
+                className="glacier-card px-6 py-4 rounded-2xl hover-lift flex items-center gap-3 group"
+              >
+                <div className="w-10 h-10 rounded-xl gradient-brand flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <tech.icon className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-bold text-foreground">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-28 relative">
+        <div className="absolute inset-0 section-gradient" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center mb-16 space-y-6">
+            <Badge className="glacier-card px-6 py-2.5 border-primary/20 shadow-glacier">
+              <Star className="w-4 h-4 mr-2 text-primary" />
+              <span className="font-bold text-foreground">Client Success</span>
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gradient-brand">
               What Our Clients Say
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Trusted by leading enterprises worldwide
-            </p>
           </div>
 
+          {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="glacier-card hover-lift p-10 group">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full gradient-brand flex items-center justify-center text-white font-bold text-xl shadow-glacier">
-                      {testimonial.avatar}
-                    </div>
-                    <div>
-                      <p className="font-bold text-lg">{testimonial.author}</p>
-                      <p className="text-sm text-primary">{testimonial.title}</p>
-                    </div>
-                  </div>
+              <Card 
+                key={index} 
+                className="group glacier-card border-2 border-border/50 hover:border-primary/40 shadow-glacier hover:shadow-glacier-lg transition-all duration-500 hover-lift"
+              >
+                <CardContent className="p-8 space-y-6">
                   
+                  {/* Stars */}
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                     ))}
                   </div>
-
-                  <p className="text-base text-muted-foreground leading-relaxed italic">
+                  
+                  {/* Quote */}
+                  <p className="text-muted-foreground leading-relaxed text-sm italic min-h-[100px]">
                     "{testimonial.quote}"
                   </p>
-
-                  <div className="pt-4 border-t border-border/50">
-                    <p className="text-sm text-muted-foreground flex items-center gap-2">
-                      <Shield className="w-4 h-4" />
-                      {testimonial.company}
-                    </p>
+                  
+                  {/* Author */}
+                  <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+                    <div className="w-12 h-12 rounded-full gradient-brand flex items-center justify-center text-white font-bold shadow-lg">
+                      {testimonial.avatar}
+                    </div>
+                    <div>
+                      <div className="font-bold text-foreground">{testimonial.author}</div>
+                      <div className="text-xs text-muted-foreground">{testimonial.title}</div>
+                      <div className="text-xs text-primary font-medium">{testimonial.company}</div>
+                    </div>
                   </div>
-                </div>
+                </CardContent>
               </Card>
             ))}
           </div>
@@ -328,38 +428,41 @@ const Projects = () => {
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-brand" />
-        <div className="absolute inset-0 neural-bg opacity-20" />
+        <div className="absolute inset-0 gradient-brand opacity-90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_60%)]" />
+        <ParticleBackground />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10">
-          <Badge className="glass-3d px-6 py-2 border-white/20 text-white">
-            <Rocket className="w-4 h-4 mr-2" />
+          
+          <Badge className="glass-3d px-6 py-3 border-white/30 text-white shadow-xl">
+            <Rocket className="w-5 h-5 mr-2 animate-pulse" />
             Start Your Project
           </Badge>
           
-          <h2 className="text-5xl sm:text-6xl font-bold text-white">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1]">
             Ready to Build
-            <span className="block mt-2">Something Amazing?</span>
+            <span className="block mt-3 text-white/90">Something Amazing?</span>
           </h2>
           
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
             Let's transform your vision into reality with cutting-edge AI technology
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
             <Button 
               size="lg" 
               variant="secondary"
-              className="hover-lift text-lg px-12 py-8 group shadow-glacier-lg"
+              className="group px-12 py-7 text-base font-bold shadow-glacier-lg hover-lift rounded-2xl"
             >
               Start Your Project
-              <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-12 py-8 border-white/30 text-white hover:bg-white/20"
+              className="px-12 py-7 text-base font-bold border-2 border-white/40 text-white hover:bg-white/20 rounded-2xl backdrop-blur-sm"
             >
+              <Play className="mr-2 h-5 w-5" />
               Schedule Consultation
             </Button>
           </div>
